@@ -1,0 +1,80 @@
+.form-control {
+    border-radius: 0px;
+}
+
+/*自定义下拉框css样式 */
+.div-li {
+    margin: 50px 20px;
+}
+
+.div-li ul {
+    list-style: none;
+}
+
+.div-li label {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 5px;
+}
+
+#divselect1 {
+    float: left;
+}
+
+/*选择框效果*/
+#divselect1 {
+    width: 100%;
+    height: 34px;
+    position: relative;
+    z-index: 3003;
+    /*float: left;*/
+    background: #fff;
+    border: 0px solid #CCCCCC;
+}
+
+#divselect1 div {
+    width: 100%;
+    height: 34px;
+    display: block;
+    color: #E1E1E1;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+
+}
+
+#divselect1 ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid #E4E4E4;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 30000;
+    margin-top: -1px;
+    display: none;
+}
+
+#divselect1 ul li {
+    list-style-type: none;
+    height: 24px;
+    line-height: 24px;
+}
+
+#divselect1 ul li a {
+    display: block;
+    height: 24px;
+    color: #333333;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#divselect1 ul li a:hover {
+    background-color: #1277D3;
+}

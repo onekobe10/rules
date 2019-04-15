@@ -1,0 +1,628 @@
+/****************************************************ȫ������ʽ**************************************************************/
+body {
+    position: relative;
+    color: #4a4a4a;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1200px) {
+    body {
+        overflow-x: auto;
+    }
+}
+
+a {
+    outline: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+/****************************************************head��ʽ**************************************************************/
+/*logo*/
+.navbar-brand {
+    padding: 5px 15px 8px 10px;
+}
+
+/*ҳͷ����*/
+.h-navbar-nav li a {
+    padding: 18px 0px 12px 0px;
+}
+
+.h-navbar-nav li a.line {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.h-navbar-nav li a.left-p {
+    padding-left: 12px;
+}
+
+/*�����Ҷ���*/
+.head-pull-right {
+    float: right !important;
+}
+
+@media (max-width: 767px) {
+    .head-pull-right {
+        float: left !important;
+    }
+
+    .h-navbar-nav li a {
+        padding: 8px;
+    }
+
+    .h-navbar-nav li a.left-p {
+        padding-left: 8px;
+    }
+}
+
+.jumbotron {
+    padding-top: 0px;
+    background-color: inherit;
+}
+
+.jumbotron-home {
+    margin-bottom: 78px;
+}
+
+.jumbotron-bg {
+    min-width: 1200px;
+    width: 100%;
+    height: 210px;
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+}
+
+.jumbotron-container {
+    height: 197px;
+}
+
+.jumbotron-seach-from {
+    padding-top: 12px;
+}
+
+.jumbotron-seach-from input,
+.jumbotron-seach-from input[type=button],
+.jumbotron-seach-from button {
+    color: #FFFFFF;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+}
+
+.jumbotron-seach-from input {
+    border-left: none;
+}
+
+.jumbotron-seach-from .form-control:hover,
+.jumbotron-seach-from .form-control:focus,
+.jumbotron-seach-from .form-control {
+    border-color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .jumbotron-seach-from {
+        padding: 10px 20px 0 0;
+    }
+
+    .jumbotron-seach-from input,
+    .jumbotron-seach-from input[type=button],
+    .jumbotron-seach-from button,
+    .jumbotron-seach-from .glyphicon {
+        margin-top: 30px;
+    }
+}
+
+.carousel-inner img {
+    cursor: pointer;
+    float: left;
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+}
+
+.carousel-home .carousel-control {
+    background-image: none;
+}
+
+.carousel-home .carousel-control .glyphicon-chevron-left {
+    margin-left: -30px;
+    left: 0;
+}
+
+.carousel-home .carousel-control .glyphicon-chevron-right {
+    margin-right: -30px;
+    right: 0px;
+}
+
+.carousel-home .carousel-indicators {
+    bottom: -29px;
+    margin-bottom: 0px;
+}
+
+.carousel-indicators .active {
+    width: 10px;
+    height: 10px;
+}
+
+/*ϵͳ������ť*/
+.h-to-view-container {
+    bottom: 0px;
+}
+
+.h-to-view {
+    float: left;
+    margin-left: 25px;
+    height: 29px;
+    width: 80px;
+    padding: 3px 10px 5px 10px;
+    cursor: pointer;
+    background-color: #222;
+    border-color: #080808;
+    border-radius: 4px;
+}
+
+.h-to-home {
+    position: absolute;
+    width: 110px;
+    height: 29px;
+    margin-left: 25px;
+    padding: 5px 10px 5px 15px;
+    cursor: pointer;
+    background-color: #222;
+    border-color: #080808;
+    border-radius: 4px;
+}
+
+.h-to-home li,
+.h-to-home li a,
+.h-to-view li,
+.h-to-view li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.h-to-home li,
+.h-to-view li {
+    float: left;
+}
+
+.h-to-home span a,
+.h-to-view span a {
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*�����*/
+.side_nav {
+}
+
+.side_nav a {
+    border-radius: 4px;
+    color: black;
+    font-style: italic;
+}
+
+.side_nav li a:hover,
+.side_nav li a:focus {
+    background: #eee;
+}
+
+.side_nav .active {
+    border-radius: 4px;
+    font-weight: bold;
+    background: #337ab7;
+}
+
+.side_nav .side_nav {
+    display: none;
+}
+
+.side_nav .active .side_nav {
+    display: block;
+}
+
+.side_nav .side_nav a {
+    font-weight: normal;
+    font-size: .85em;
+}
+
+.side_nav .side_nav span {
+    margin: 0 5px 0 2px;
+}
+
+.side_nav .side_nav .active a,
+.side_nav .side_nav .active:hover a,
+.side_nav .side_nav .active:focus a {
+    font-weight: bold;
+    padding-left: 30px;
+    border-left: 5px solid black;
+}
+
+.side_nav .side_nav .active span,
+.side_nav .side_nav .active:hover span,
+.side_nav .side_nav .active:focus span {
+    display: none;
+}
+
+/****************************************************foot��ʽ**************************************************************/
+footer {
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    background-color: #0080cc;
+}
+
+/****************************************************��������ʽ**************************************************************/
+/*affix�̶�*/
+.affix-top {
+    position: relative;
+}
+
+.affix {
+    top: 60px;
+}
+
+.affix, .affix-bottom {
+    width: 213px;
+}
+
+.affix-bottom {
+    position: absolute;
+}
+
+@media (min-width: 1200px) {
+    .affix, .affix-bottom {
+        width: 263px;
+    }
+}
+
+.f-ds-no {
+    display: none;
+}
+
+.f-f-l {
+    float: left
+}
+
+.f-c-main-0 {
+    background-color: #014c8f;
+}
+
+.f-c-main-1 {
+    background-color: #0080cc;
+}
+
+.f-c-main-2 {
+    background-color: #5ab1ef;
+}
+
+.f-c-operation-0 {
+    background-color: #313131;
+}
+
+.f-c-operation-1 {
+    background-color: #545454;
+}
+
+.f-c-operation-2 {
+    background-color: #999999;
+}
+
+.f-c-decoration-0 {
+    background-color: #62b5e5;
+}
+
+.f-c-decoration-1 {
+    background-color: #44dad5;
+}
+
+.f-c-decoration-2 {
+    background-color: #675fd6;
+}
+
+.f-c-decoration-3 {
+    background-color: #ff5f81;
+}
+
+.f-c-decoration-4 {
+    background-color: #72c81b;
+}
+
+.f-c-decoration-5 {
+    background-color: #f0b123;
+}
+
+.f-c-index-0 {
+    background-color: #5ab1ef;
+}
+
+.f-c-index-1 {
+    background-color: #2ec7c9;
+}
+
+.f-c-index-2 {
+    background-color: #b6a2de;
+}
+
+.f-c-index-3 {
+    background-color: #2ec7c9;
+}
+
+.f-c-text-0 {
+    color: #4a4a4a;
+}
+
+.f-c-text-1 {
+    color: #ffffff;
+}
+
+.f-c-text-2 {
+    color: #0080cc;
+}
+
+.f-c-text-3 {
+    color: #999999;
+}
+
+.f-c-text-4 {
+    color: #ff5f81;
+}
+
+.f-p-l20 {
+    padding-left: 20px;
+}
+
+.f-p-t20 {
+    padding-top: 20px;
+}
+
+.f-m-t20 {
+    margin-top: 20px;
+}
+
+/****************************************************��������ʽ**************************************************************/
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+.container-fluid {
+
+}
+
+.h-container-fluid {
+    min-width: 100%;
+}
+
+/****************************************************ģ������ʽ**************************************************************/
+/*������Ϣ*/
+.left-content {
+}
+
+.left-content-up {
+    height: 100px;
+}
+
+.left-content-down {
+    margin-top: 10px;
+    height: 100px;
+}
+
+.left-message-div {
+    cursor: pointer;
+    padding: 15px 5px 5px 5px;
+    color: #FFFFFF;
+    font-size: 30px;
+    border-radius: 2px;
+    width: 48%;
+    height: 100%;
+    float: left;
+}
+
+.right-message-div {
+    cursor: pointer;
+    padding: 15px 0px 5px 5px;
+    color: #FFFFFF;
+    font-size: 30px;
+    border-radius: 2px;
+    width: 48%;
+    height: 100%;
+    float: right;
+}
+
+/*�б�*/
+.message_list_container {
+}
+
+.message_list {
+    width: 100%;
+    height: 210px;
+    padding: 10px 10px 0px 10px;
+    border: 1px solid #999999;
+    border-top: 2px solid #0080cc;
+}
+
+.message_list .message_list_head {
+    padding-top: 3px;
+    height: 31px;
+    border-bottom: 1px solid #999999;
+}
+
+.message_list .message_list_head .tab_list_head_title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message_list .message_list_head li {
+    cursor: pointer;
+    margin-top: 2px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.message_list .message_list_head li.line {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.message_list .message_list_head li.active {
+    color: #999999;
+}
+
+.message_list .message_list_content {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.message_list .message_list_content li {
+    line-height: 1.9;
+}
+
+.message_list .message_list_content li a {
+    cursor: pointer;
+    color: #4a4a4a;
+}
+
+.message_list .message_list_content li a:hover {
+    color: #0080cc;
+}
+
+.message_list .message_list_content a.more {
+    cursor: pointer;
+    color: #4a4a4a;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.message_list .message_list_content a.more:hover {
+    color: #0080cc;
+    margin-top: -10px;
+}
+
+/*��tabҳ�б�*/
+
+.tab_message_list {
+    height: 210px;
+    border: 1px solid #999999;
+}
+
+@media (max-width: 767px) {
+    .tab_message_list .nav-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+    }
+
+    .tab_message_list .nav-tabs.nav-justified > li > a {
+        margin-bottom: 0;
+    }
+}
+
+.tab_message_list .nav li a {
+    border-radius: 0px;
+    outline: none;
+}
+
+.tab_message_list .nav li:focus,
+.tab_message_list .nav li.active,
+.tab_message_list .nav li:hover {
+    border-top: 2px solid #0080cc;
+}
+
+.tab_message_list .tab-message-content {
+    width: 100%;
+    height: 165px;
+}
+
+.tab_message_list .tab-message-content .tab-message-pane {
+    width: 100%;
+    padding: 10px 10px 0 10px;
+    display: none;
+}
+
+.tab_message_list .tab-message-content .active {
+    display: block;
+}
+
+.tab_message_list .tab-message-content .tab-message-pane ul {
+}
+
+.tab_message_list .tab-message-content .tab-message-pane li {
+    line-height: 1.9;
+}
+
+.tab_message_list .tab-message-content .tab-message-pane li a {
+    cursor: pointer;
+    color: #4a4a4a;
+}
+
+.tab_message_list .tab-message-content .tab-message-pane li a:hover {
+    color: #0080cc;
+}
+
+.tab_message_list .tab-message-content .tab-message-pane a.more {
+    cursor: pointer;
+    color: #4a4a4a;
+    font-size: 12px;
+    margin-top: -10px;
+    padding-right: 20px;
+}
+
+.tab_message_list .tab-message-content a.more:hover {
+    color: #0080cc;
+}
+
+@CHARSET "UTF-8";
+/*****家客自己的css******/
+
+/******用于中布局中的div样式,参考reportForms/main.jsp*******/
+.menu {
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    border-right: 1px solid #999999;
+    margin-bottom: 0px;
+    border-top: 2px solid rgb(0, 127, 204);
+}
+
+.menu_title {
+    font-size: 16px;
+    font-weight: normal;
+    color: #4a4a4a;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid #999999;
+    padding: 8px 0;
+    /*background: url(../images/bottom.png) no-repeat right center;*/
+}
+
+.list-group-item {
+    border-bottom: 1px solid #999999;
+    margin: 1px 10px;
+    font-size: 16px;
+    font-weight: 500;
+}

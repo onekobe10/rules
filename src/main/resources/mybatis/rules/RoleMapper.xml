@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"mybatis-3-mapper.dtd" >
+<mapper namespace="com.gankki.demo.portal.rules.mapper.RoleMapper">
+	<resultMap id="BaseResultMap" type="com.gankki.demo.portal.rules.model.Role">
+		<id column="ID" property="id" jdbcType="INTEGER"/>
+		<id column="ROLE_ID" property="roleId" jdbcType="VARCHAR" />
+		<id column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+		<id column="ROLE_TYPE" property="roleType" jdbcType="VARCHAR" />
+		<id column="CREATE_TIME" property="createTime" jdbcType="DATE" />
+	</resultMap>
+	<select id="getRoleByUser" resultMap="BaseResultMap" parameterType="java.lang.String">
+  		select r.* from portal_system_role r 
+			inner join portal_system_role_user ru
+			on r.role_id = ru.role_id
+			where ru.user_id=#{userId,jdbcType=VARCHAR}
+  	</select>
+</mapper>

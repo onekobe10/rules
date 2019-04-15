@@ -1,0 +1,20 @@
+表名 BREAKDOWN_COMPLAINTRATE breakdown_complaint_rate
+id 主键
+statismonth 统计月份
+breakdown_city 故障地市名称
+breakdown_town 故障地区县名称
+breakdown_community 故障地小区名称
+user_count 小区用户数量
+complaint_countmonthly 小区当月的投诉数
+complaint_density 小区投诉密度
+off-network_rate 小区离网率 
+
+SELECT DECODE(GROUPING(BREAKDOWN_CITY),1,'合计',0,BREAKDOWN_CITY) CITY 
+,COUNT(1) TOTAL 
+FROM BREAKDOWN_COMPLAINT_RATE 
+GROUP BY ROLLUP (BREAKDOWN_CITY);
+
+
+
+新上传的文件会将本来文件夹下的文件覆盖吗？测试
+在mybatis中，无论你指定还是不指定返回类型，mybatis都会默认的先将查询回的值放入一个hashMap中（如果返回的值不止一条就是一个包含hashMap的list）。这其中的区别在于，如果你指定了返回类型，mybatis将会根据返回类型的实体类来从hashMap中获取值并set到这个实体类中。如果不指定就默认返回一个HashMap<String,Object>（List<HashMap<String,Object>>）。

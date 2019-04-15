@@ -1,0 +1,20 @@
+
+.jumbotron_bc {
+    background-color: #0080cc;
+}
+
+.div_effect {
+    border: 1px solid #999999;
+    border-top: 2px solid #0080cc;
+}
+
+.div_title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.div_secondTitle {
+    font-size: 13px;
+    color: #4a4a4a;
+    font-weight: bold;
+}

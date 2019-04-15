@@ -1,0 +1,38 @@
+邮箱登陆地址：mail.boco.com.cn
+邮箱：liuhao2017@boco.com.cn  boco#990225
+上网登录地址：http://10.127.10.2:90/login
+上网账号：liuhao2017 boco#906505
+禅道：liuhao2017 123456
+Gitlib liuhao2017 lh1993717 https://123.124.236.237:8443/portal
+分支：1900
+快捷键：
+关机：alt+f4
+打开我的电脑 windows + E
+操作中心 windows + A
+
+四川：http://localhost:8080/portal_notice/notice/manage/main?userIdDes=4be44ddc40552199
+
+ctrl+shift+x   转为大写    
+ctrl+shift+y   转为小写
+
+install -DskipTests
+clean tomcat7:run
+clean tomcat:run
+在不更改pom文件的前提下更改tomcat的默认监听端口：-Dmaven.tomcat.port=8081 tomcat:run	
+
+attr text val的区别
+只要是能区分子元素的选择,父元素可以直接拿到子元素的属性
+
+
+javabeanz中加注释保持一致：@DateTimeFormat(pattern="yyyy-MM-dd")
+将后台的date类型按照格式显示在input type=text类型的标签中：
+<input  type="text" class="" id="" name="buildDate"  value="<fmt:formatDate value='${rule.buildDate }' pattern='yyyy-MM-dd'/>"/>
+
+select decode(grouping(deptno),1,'合计',0,deptno)deptno,count(1) from emp group by rollup (deptno)
+
+下载文件头信息
+String fileName = new String(cep.getExcelName().getBytes(),"iso-8859-1");
+res.setHeader("Content-Disposition", "attachment;filename="+ fileName);
+设置页面不刷新
+response.setHeader("Pragma", "No-cache");
+response.setHeader("Cache-Control", "no-cache");	

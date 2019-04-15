@@ -1,0 +1,282 @@
+/* 表单  CSS Document */
+/* 
+---------------------------------
+Updated: 2013-06-07
+Updated by: 李溪
+--------------------------------- 
+*/
+
+/*下拉列表 Download */
+span.blueCircle_mSel_main {
+    overflow: hidden;
+    margin: 0;
+    padding: 0 20px 0 10px;
+    background: url(../images/blueCircle_bg.gif) no-repeat;
+    vertical-align: middle;
+    line-height: 25px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+    color: #000;
+    width: 160px;
+    height: 25px;
+    zoom: 1;
+    display: inline-block;
+}
+
+.blueCircle_mSel_list {
+    display: none;
+    position: absolute;
+    margin: -4px 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    font-size: 13px;
+    width: 190px;
+    z-index: 10008;
+}
+
+.blueCircle_mSel_list li {
+    background-color: #fcfcfc;
+    border: #6D92AB solid;
+    border-width: 0 1px;
+    height: 25px;
+}
+
+.blueCircle_mSel_list li.mSel_start {
+    line-height: 0;
+    font-size: 0;
+    height: 5px;
+}
+
+.blueCircle_mSel_list li.mSel_end {
+    background: url(../images/blueCircle_bg.gif) no-repeat left bottom;
+    border: none;
+    font-size: 0;
+    line-height: 0;
+    height: 6px;
+}
+
+.blueCircle_mSel_list li a {
+    display: block;
+    overflow: hidden;
+    padding: 0 10px;
+    line-height: 25px;
+    text-decoration: none;
+    color: #79A2BD;
+    height: 25px;
+}
+
+.blueCircle_mSel_list li a:hover {
+    background-color: #B1C3D9;
+    color: #fff;
+}
+
+.blueCircle_mSel_list li.mSel_on a {
+    background-color: #7FA9C6;
+    color: #fff;
+}
+
+.blueCircle_mSel_list li a.mSel_disable {
+    font-style: italic;
+}
+
+.blueCircle_mSel_list li a.mSel_disable:hover {
+    background: none;
+    color: #79A2BD;
+}
+
+/*输入框 */
+.input_text_500 {
+    border: 1px solid #7f9db9;
+    width: 500px;
+    padding: 2px;
+    color: #666666;
+}
+
+.input_text_200 {
+    border: 1px solid #7f9db9;
+    width: 200px;
+    padding: 2px;
+    color: #666666;
+}
+
+.input_text_100 {
+    border: 1px solid #7f9db9;
+    width: 100px;
+    padding: 2px;
+    color: #666666;
+}
+
+.input_text_350 {
+    border: 1px solid #7f9db9;
+    width: 350px;
+    padding: 2px;
+    color: #666666;
+}
+
+/*按钮 */
+.button_search {
+    background: url(../images/button_search.png) no-repeat;
+    cursor: pointer;
+    width: 72px;
+    height: 28px;
+    line-height: 28px;
+    color: #3099dc;
+    font-size: 14px;
+    text-align: center;
+    border: 0;
+    font-weight: bold;
+}
+
+/*该按钮使用时不得超过4个字符 */
+.button_gary {
+    background: url(../images/button_gary.png) no-repeat;
+    width: 72px;
+    height: 28px;
+    line-height: 28px;
+    color: #8d8d8d;
+    font-size: 14px;
+    text-align: center;
+    border: 0;
+}
+
+/*该按钮使用时不得超过4个字符*/
+.button_important {
+    background: url(../custom_images/button_important.png) repeat-x;
+    cursor: pointer;
+    height: 27px;
+    line-height: 26px;
+    padding: 0 20px;
+    border: 1px solid #96bdff;
+    color: #fff;
+}
+
+/*该按钮与button_normal同时使用时，为重要提示按钮 */
+.button_normal {
+    background: url(../custom_images/button_normal.png) repeat-x;
+    cursor: pointer;
+    height: 27px;
+    line-height: 26px;
+    padding: 0 20px;
+    border: 1px solid #e5e5e5;
+    color: #7b97a8;
+}
+
+.button_add {
+    background: url(../images/button_add.png) no-repeat;
+    cursor: pointer;
+    width: 105px;
+    height: 31px;
+    border: 0;
+    font-size: 0;
+}
+
+/*新增按钮 */
+.button_download {
+    background: url(../images/button_download.png) no-repeat;
+    cursor: pointer;
+    width: 104PX;
+    height: 28px;
+    font-size: 0px;
+    line-height: 1px;
+    border: 0;
+}
+
+.button_go {
+    cursor: pointer;
+}
+
+.button_export {
+    background: url(../images/button_export.png) no-repeat;
+    cursor: pointer;
+    width: 82px;
+    height: 28px;
+    font-size: 0px;
+    line-height: 1px;
+    border: 0;
+}
+
+/*图标*/
+.icon_edit {
+    background: url(../images/group_edit.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+/*13.11.12，分页按钮ie7不显示解决方法*/
+.icon_del {
+    background: url(../images/icon_del.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_view {
+    background: url(../images/icon_view.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_send {
+    background: url(../images/icon_send.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_unsent {
+    background: url(../images/icon_unsent.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_upload {
+    background: url(../images/icon_upload.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_unupload {
+    background: url(../images/icon_unupload.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_top {
+    background: url(../images/arrow_top.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon_down {
+    background: url(../images/arrow_down.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+/* 大文本输入框 */
+
+.text_area {
+    width: 350px;
+    height: 60px;
+}
+
+
+

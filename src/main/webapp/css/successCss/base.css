@@ -1,0 +1,194 @@
+﻿/*基本共用  CSS Document */
+/* 
+---------------------------------
+Updated: 2013-06-07
+Updated by: 李溪
+--------------------------------- 
+*/
+/* start base  对body的背景、文本、字体、行高、全局链接进行设置(base模块）*/
+/*body*/
+html {
+}
+
+body {
+    font: 12px/1.8em "Microsoft YaHei", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.fixed:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.fixed {
+    display: block;
+    min-height: 1%;
+}
+
+* html .fixed {
+    height: 1%;
+}
+
+/*link*/
+a {
+    color: #555555;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #065a94;
+    text-decoration: underline;
+}
+
+/*display*/
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+.inline {
+    display: inline;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+/*float*/
+.fll {
+    float: left;
+}
+
+.flr {
+    float: right;
+}
+
+.fln {
+    float: none;
+}
+
+/*width height*/
+.w960 {
+    width: 960px;
+}
+
+.w190 {
+    width: 190px;
+}
+
+.w88 {
+    width: 90px;
+}
+
+.h960 {
+    height: 960px;
+}
+
+/*margin padding*/
+.mg0 {
+    margin: 0;
+}
+
+.mg5 {
+    margin: 5px;
+}
+
+.mg10 {
+    margin: 10;
+}
+
+.mg_b10 {
+    margin-bottom: 10px;
+}
+
+.mr2 {
+    margin-right: 2px;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+
+.pd10 {
+    padding: 10px;
+}
+
+.pd20 {
+    padding: 20px;
+}
+
+.pd1040 {
+    padding: 10px 40px;
+}
+
+.pd010 {
+    padding: 0 10px;
+}
+
+/*07-12添加*/
+.pd5 {
+    padding: 5px;
+}
+
+.pd8 {
+    padding: 8px;
+}
+
+/*background*/
+/*color*/
+.red {
+    color: #F00;
+}
+
+.strong1 {
+    color: #c00;
+}
+
+.blue {
+    color: #5e93dd;
+}
+
+.gray {
+    color: #ccc;
+}
+
+.signal {
+    cursor: pointer;
+}
+
+/*font*/
+.font16 {
+    font-size: 16px;
+}
+
+/*text-align*/
+.tal {
+    text-align: left;
+}
+
+.tac {
+    text-align: center;
+}
+
+.tar {
+    text-align: right;
+}
+
+/*form*/
+.pos_re {
+    position: relative;
+}
+
+/*边框 --07-12添加*/
+.main_border {
+    border: 1px solid #b1cae8;
+    background: #fff;
+}
+
+/* end base */

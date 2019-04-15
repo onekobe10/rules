@@ -1,0 +1,107 @@
+body {
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 1px 1px 1px 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-bottom: 0px solid #dddddd;
+    border-top: 1px solid #eeeeee;
+    text-align: left;
+    color: #4B4B4B;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+}
+
+.table > thead > tr > th {
+    color: #404D5B;
+    font-weight: normal;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.checked {
+    margin-left: 20px;
+    padding-left: 30px;
+    padding-top: 3px;
+    cursor: pointer;
+    background: url(/portal_notice/images/a.png) no-repeat left top;
+    background-position: left bottom;
+}
+
+.unchecked {
+    margin-left: 20px;
+    padding-left: 30px;
+    cursor: pointer;
+    background: url(/portal_notice/images/a.png) no-repeat left top;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+.col-xs-12 button {
+    color: #fff;
+    background-color: #0F9FF6;
+    width: 80px;
+}
+
+.col-xs-2 {
+    background-color: #F8F8F8;
+}
+
+label {
+    font-weight: normal;
+}
+
+.table.table-bordered {
+    margin-top: 8px;
+}
+
+.pre-scrollable {
+    margin: 0px;
+    background-color: #fff;
+    height: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.content-main {
+    border: 1px solid #A4A4A4;
+    border-top: 2px solid #0E9EF4;
+    margin-top: -30px;
+}
+
+.mainTitle {
+    width: 96%;
+    padding-bottom: 27px;
+    margin: -8px 0px 10px 2%;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.auditdetails {
+    border-top: 1px solid #C7C7C7;
+    padding-top: 10px;
+}
+
+.col-xs-12.menues {
+    height: 35px;
+    float: right;
+    padding: 0px;
+}
+
+.content-mains {
+    border-top: 1px solid #C7C7C7;
+    padding-top: 10px;
+}
+
+.content-body {
+    width: 96%;
+    margin-left: 2%;
+    padding: 0px;
+    height: 1010px;
+}
