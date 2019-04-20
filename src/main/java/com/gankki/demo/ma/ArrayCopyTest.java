@@ -14,9 +14,9 @@ public class ArrayCopyTest {
 	    String[] strArr = {"111", "222", "333"};
 		String[] strCopy = Arrays.copyOf(strArr, 5);
 		strCopy[4] = "111";
-		System.out.println(strCopy);
+		System.out.println(Arrays.toString(strCopy));
 		String[] copy = new String[5];
 		System.arraycopy(strArr, 0, copy, 0, 3);
-		System.out.println(copy);
+		System.out.println(Arrays.toString(copy));
 	}
 }

@@ -41,8 +41,17 @@ public class PriorityQueueTest {
 		pq2.add(3);
 		System.out.println(pq2.toString());
 		while (pq2.peek() != null) {
-			System.out.print(pq2.poll() + " ");
+			System.out.println(pq2.poll() + " ");
 		}
+
+		Queue<Integer> pq3 = new PriorityQueue<>(5, Comparator.reverseOrder());
+		pq3.add(5);
+		pq3.add(4);
+		pq3.add(1);
+		pq3.add(3);
+		pq3.add(2);
+		pq3.add(8);
+		System.out.println(pq3.toString());
 	}
 
 	static class Task {
