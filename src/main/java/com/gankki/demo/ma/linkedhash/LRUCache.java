@@ -16,6 +16,16 @@ public class LRUCache<K, V> extends LinkedHashMap<K, V> {
 		this.maxEntries = maxEntries;
 	}
 
+	/**
+	 * **********************
+	 * 使用LinkedHashMap，可以非常容易的实现LRU缓存
+	 * 默认情况下，LinkedHashMap没有对容量做限制，但它可以容易的做的，它有一个protected方法removeEldestEntry
+	 * 在添加元素到LinkedHashMap后，LinkedHashMap会调用这个方法，传递的参数是最久没被访问的键值对，
+	 * 如果这个方法返回true，则这个最久的键值对就会被删除。
+	 * LinkedHashMap的实现总是返回false，所有容量没有限制，但子类可以重写该方法，在满足一定条件的情况，返回true。
+	 * @param eldest
+	 * @return
+	 */
 	@Override
 	protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
 		return size() > maxEntries;
