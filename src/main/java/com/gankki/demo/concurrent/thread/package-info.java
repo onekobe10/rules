@@ -1,7 +1,7 @@
 package com.gankki.demo.concurrent.thread;
 
 /**
- * thread intro
+ * thread introduction 线程介绍
  *
  * 线程表示一条单独的执行流，它有自己的程序执行计数器，有自己的栈。
  * run方法的方法签名是固定的，public，没有参数，没有返回值，不能抛出受检异常。

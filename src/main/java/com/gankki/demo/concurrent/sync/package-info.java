@@ -1,7 +1,12 @@
 package com.gankki.demo.concurrent.sync;
 
 /**
+ * 	synchronized introduction 同步介绍
+ *
  *	当多个线程并发访问共享资源的操作为非原子操作时，由于竞态条件的存在，会导致结果不符合逾期，这个问题可以用synchronized来解决
+ *
+ *	synchronized 只能修饰方法或者代码块（方法内部的代码块和类的代码块都可以）
+ *	synchronized (xxx) 只能是对象不能是变量，只有对象内部才有锁
  *
  *	synchronized实例方法实际保护的是同一个对象的方法调用，确保同时只能有一个线程执行。
  *	再具体来说，synchronized实例方法保护的是当前实例对象，即this，this对象有一个锁和一个等待队列，
@@ -41,6 +46,5 @@ package com.gankki.demo.concurrent.sync;
  *	 	使用synchronized或者其他锁，要注意死锁.
  *	 	比如，有a, b两个线程，a持有锁A，在等待锁B，而b持有锁B，在等待锁A，a,b陷入了互相等待，最后谁都执行不下去,所谓死锁就是类似这种现象，
  *		解决办法：首先，应该尽量避免在持有一个锁的同时去申请另一个锁，如果确实需要多个锁，所有代码都应该按照相同的顺序去申请锁
- *
  *
  */
