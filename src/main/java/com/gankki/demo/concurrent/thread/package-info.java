@@ -32,4 +32,6 @@ package com.gankki.demo.concurrent.thread;
  * 	  	 FutureTask对象在它的run方法中调用了Callable接口的实现类的call方法。可以调用FutureTask对象get方法返回call方法的返回值。
  * 	  	 层层包装 装饰模式的应用
  *
+ *	Thread.yield()，yield只是告诉操作系统可以先让其他线程运行，但自己依然是可运行状态
+ *
  */
