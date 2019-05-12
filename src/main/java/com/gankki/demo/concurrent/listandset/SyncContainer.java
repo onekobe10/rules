@@ -1,8 +1,9 @@
-package com.gankki.demo.concurrent.sync;
+package com.gankki.demo.concurrent.listandset;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *@desc
@@ -55,6 +56,14 @@ public class SyncContainer {
 		iteratorThread.start();
 	}
 
+	public static void sort(){
+		CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+		list.add("c");
+		list.add("a");
+		list.add("b");
+		Collections.sort(list);
+	}
+
 	/**
 	 * 如果在遍历的同时容器发生了结构性变化，就会抛出该异常，同步容器并没有解决这个问题，
 	 * 如果要避免这个异常，需要在遍历的时候给整个容器对象加锁
@@ -62,9 +71,10 @@ public class SyncContainer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final List<String> list = Collections
-				.synchronizedList(new ArrayList<>());
-		startIteratorThread2(list);
-		startModifyThread(list);
+		final List<String> list = new CopyOnWriteArrayList<>();
+		// startIteratorThread(list);
+		// startModifyThread(list);
+
+		sort();
 	}
 }
