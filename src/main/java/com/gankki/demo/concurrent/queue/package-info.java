@@ -111,16 +111,6 @@ package com.gankki.demo.concurrent.queue;
  *     int getWaitingConsumerCount();
  * }
  *
- * LinkedTransferQueue是基于链表实现的、无界的TransferQueue
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * 	LinkedTransferQueue是基于链表实现的、无界的TransferQueue
  *
  */
