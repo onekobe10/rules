@@ -1,6 +1,5 @@
-package com.gankki.demo.concurrent.listandset;
+package com.gankki.demo.concurrent.copyonwrite;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

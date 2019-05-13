@@ -1,4 +1,4 @@
-package com.gankki.demo.concurrent.listandset;
+package com.gankki.demo.concurrent.copyonwrite;
 
 /**
  * 并发包中容器类	Copy-On-Write实现的list/set,CopyOnWriteArrayList/CopyOnWriteArraySet
