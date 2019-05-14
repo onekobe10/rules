@@ -1,4 +1,4 @@
-package com.gankki.demo.enumTest;
+package com.gankki.demo.test.enumTest;
 
 import java.lang.reflect.Method;
 import java.util.EnumMap;
