@@ -41,6 +41,7 @@ public class InvokeAllDemo {
 		Collection<UrlTitleParser> tasks = Arrays.asList(new UrlTitleParser[] {
 				new UrlTitleParser(url1), new UrlTitleParser(url2) });
 		try {
+			// 要等到所有任务都完成才处理结果
 			List<Future<String>> results = executor.invokeAll(tasks, 10,
 					TimeUnit.SECONDS);
 			for (Future<String> result : results) {
