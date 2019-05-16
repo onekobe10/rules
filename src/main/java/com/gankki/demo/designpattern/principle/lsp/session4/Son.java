@@ -1,4 +1,4 @@
-package com.gankki.demo.pattern.principle.lsp.session4;
+package com.gankki.demo.designpattern.principle.lsp.session4;
 
 import java.util.Collection;
 import java.util.HashMap;

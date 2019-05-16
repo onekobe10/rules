@@ -1,7 +1,6 @@
-package com.gankki.demo.pattern.principle.lsp.session4;
+package com.gankki.demo.designpattern.principle.lsp.session4;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Client {
 	public static void invoker() throws  Exception{
