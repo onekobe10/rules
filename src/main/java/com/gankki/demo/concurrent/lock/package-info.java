@@ -16,6 +16,7 @@ package com.gankki.demo.concurrent.lock;
  * 		1.可重入，一个线程在持有一个锁的前提下，可以继续获得该锁
  * 		2.可以解决竞态条件问题
  * 		3.可以保证内存可见性
+ *
  *	ReentrantLock可以使用tryLock()方法避免死锁，在原理上使用CAS、LockSupport和AQS来实现
  *
  *	public ReentrantLock(boolean fair)

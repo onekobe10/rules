@@ -6,13 +6,13 @@ package com.gankki.demo.concurrent.sync;
  *@createDate 2019/5/8
  */
 public class Counter {
-	private int count;
+	private  volatile int count;
 	private Object lock = new Object();
 
 	/**
 	 * 同步方法
 	 */
-	public synchronized void incr(){
+	public void incr(){
 		count ++;
 	}
 

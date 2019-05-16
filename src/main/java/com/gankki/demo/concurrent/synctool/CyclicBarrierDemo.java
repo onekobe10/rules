@@ -48,13 +48,9 @@ public class CyclicBarrierDemo {
 	public static void main(String[] args) {
 		int num = 3;
 		Tourist[] threads = new Tourist[num];
-		CyclicBarrier barrier = new CyclicBarrier(num, new Runnable() {
-
-			@Override
-			public void run() {
+		CyclicBarrier barrier = new CyclicBarrier(num, () -> {
 				System.out.println("all arrived " + System.currentTimeMillis()
 						+ " executed by " + Thread.currentThread().getName());
-			}
 		});
 		for (int i = 0; i < num; i++) {
 			threads[i] = new Tourist(barrier);

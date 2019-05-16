@@ -42,7 +42,7 @@ public long getCompletedTaskCount()
 //返回所有任务数，包括所有已完成的加上所有排队待执行的
 public long getTaskCount()
 ```
-#### 对列
+#### 队列
 ThreadPoolExecutor要求的队列类型是阻塞队列BlockingQueue，例如
 * LinkedBlockingQueue：基于链表的阻塞队列，可以指定最大长度，但默认是无界的。
 * ArrayBlockingQueue：基于数组的有界阻塞队列

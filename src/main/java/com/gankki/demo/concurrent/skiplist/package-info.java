@@ -6,7 +6,7 @@ package com.gankki.demo.concurrent.skiplist;
  *	TreeSet是基于TreeMap实现的，与此类似，ConcurrentSkipListSet也是基于ConcurrentSkipListMap实现的
  *
  *	ConcurrentSkipListMap是基于SkipList实现的，SkipList称为跳跃表或跳表，是一种数据结构，
- *	并发版本为什么采用跳表而不是树呢？原因也很简单，因为跳表更易于实现高效并发算法。
+ *	并发版本为什么采用跳表而不是树呢？原因也很简单，**因为跳表更易于实现高效并发算法。** 非常复杂
  *
  *	ConcurrentSkipListMap有如下特点：
  * 		1.没有使用锁，所有操作都是无阻塞的，所有操作都可以并行，包括写，多个线程可以同时写。

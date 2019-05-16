@@ -20,6 +20,7 @@ public class WaitThread extends Thread {
 				System.out.println("sync");
 				while (!fire) {
 					wait();
+					System.out.println("1....");
 				}
 			}
 			System.out.println("fired");
@@ -34,13 +35,14 @@ public class WaitThread extends Thread {
 	public synchronized void fire() {
 		this.fire = true;
 		notify();
+		System.out.println("notify...");
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		WaitThread waitThread = new WaitThread();
 		waitThread.start();
 		Thread.sleep(3000);
-		System.out.println("fire");
+		//System.out.println("fire");
 		waitThread.fire();
 	}
 }

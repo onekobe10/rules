@@ -36,7 +36,7 @@ package com.gankki.demo.concurrent.thread;
  *		只是告诉操作系统的调度器可以先让其他线程运行，如果调度器没有分配资源给其他线程，那么当前线程依然是运行状态。
  *		也就是让出当前线程的可运行资源给其他线程，但是是随机的，不一定让出，由操作系统决定的调度器决定。
  *
- * Thread.sleep(long millis) throws InterruptedException
+ *  Thread.sleep(long millis) throws InterruptedException
  * 		让当前线程睡眠一段时间，在睡眠的过程中，不会失去锁和其他资源。
  *
  */

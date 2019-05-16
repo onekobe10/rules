@@ -68,7 +68,8 @@ public class ThreadPoolProblem {
 		System.out.println(executor.isTerminated());
 
 		/**
-		 * .......问题....
+		 * 此处应该是调用其他加入此线程的线程的join方法，而不是此线程的join方法
+		 * 如果在此线程中调用此线程自己的join方法，就会造成死锁。
 		 */
 		Thread.currentThread().join();
 		System.out.println("-------------------------");
