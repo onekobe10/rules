@@ -11,3 +11,5 @@
 1. 单例模式 Singleton Pattern
 2. 装饰模式 Decorator Pattern
 3. 适配器模式 Adapter Pattern
+4. 迭代器模式 Iterator Pattern
+5. 责任链模式 Chain of Responsibility

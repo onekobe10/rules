@@ -113,5 +113,6 @@ ScheduledExecutorService的主要实现类是ScheduledThreadPoolExecutor，它�
 3. 引入了流的概念，基于Fork/Join框架，可以非常方便的对大量数据进行并行操作
 
 
-
+#### 遗留问题
+1. 竞争条件下的volatile
 
