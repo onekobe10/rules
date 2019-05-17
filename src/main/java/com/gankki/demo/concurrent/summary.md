@@ -84,12 +84,13 @@ HashMap不是线程安全的，在并发更新的情况下，HashMap的链表结
 2. Executor和ExecutorService：表示执行服务
 3. Future：表示异步任务的结果     
 
+Executor表示最简单的执行服务,只有一个execute方法，`void execute(Runnable command);`ExecutorService扩展了Executor，它的submit方法可以封装执行线程的返回结果为一个Future对象，`<T> Future<T> submit(Callable<T>/Runnable task);`在Future的实现类FutureTask中的get()方法，可以返回执行线程的运行结果，或者抛出执行线程抛出的异常。   
 使用者只需要通过ExecutorService提交任务，通过Future操作任务和结果即可，不需要关注线程创建和协调的细节。
 ##### 线程池
-1. 任务执行服务的主要实现机制是线程池，实现类是ThreadPoolExecutor，线程池主要由两个概念组成，一个是任务队列，另一个是工作者线程。任务队列是一个阻塞队列，保存待执行的任务。工作者线程主体就是一个循环，循环从队列中接受任务并执行。ThreadPoolExecutor有一些重要的参数，理解这些参数对于合理使用线程池非常重要。
+1. **任务执行服务的主要实现机制是线程池，实现类是ThreadPoolExecutor，线程池主要由两个概念组成，一个是任务队列，另一个是工作者线程。任务队列是一个阻塞队列，保存待执行的任务。工作者线程主体就是一个循环，循环从队列中接受任务并执行。ThreadPoolExecutor有一些重要的参数，理解这些参数对于合理使用线程池非常重要。**
 2. ThreadPoolExecutor实现了生产者/消费者模式，工作者线程就是消费者，任务提交者就是生产者，线程池自己维护任务队列。当我们碰到类似生产者/消费者问题时，应该优先考虑直接使用线程池，而非重新发明轮子，自己管理和维护消费者线程及任务队列。
 ##### CompletionService
-在异步任务程序中，一种场景是，主线程提交多个异步任务，然后希望有任务完成就处理结果，并且按任务完成顺序逐个处理，对于这种场景，Java并发包提供了一个方便的方法，使用CompletionService，这是一个接口，它的实现类是ExecutorCompletionService，它通过一个额外的结果队列，方便了对于多个异步任务结果的处理。
+在异步任务程序中，一种场景是，主线程提交多个异步任务，然后希望有任务完成就处理结果，并且按任务完成顺序逐个处理，对于这种场景，Java并发包提供了一个方便的方法，使用CompletionService，这是一个接口，它的实现类是ExecutorCompletionService，它通过一个额外的结果队列，方便了对于多个异步任务结果的处理。 
 ##### 定时任务
 异步任务中，常见的任务是定时任务。在Java中，有两种方式实现定时任务：
 1. 使用java.util包中的Timer和TimerTask
@@ -112,7 +113,10 @@ ScheduledExecutorService的主要实现类是ScheduledThreadPoolExecutor，它�
 2. ConcurrentHashMap增加了一些新的方法，内部实现也进行了优化
 3. 引入了流的概念，基于Fork/Join框架，可以非常方便的对大量数据进行并行操作
 
-
+#### Gankki's Summary
+1. 非阻塞的并发容器一般名字中含有Concurrent关键字,阻塞的容器一般有Blocking关键字，阻塞容器一般都是基于显式锁ReentrantLock实现的。
+2. 竞争条件下的volatile修饰的变量，不能保证期望值的原因是，在多核的CPU中，同时多个CPU同时处理不同线程的运算，导致了不同线程拿到了相同的值进行了计算，导致结果被覆盖，出现了小于期望结果的值。
 #### 遗留问题
-1. 竞争条件下的volatile
-
+1. 线程池中为什么使用阻塞队列而不使用非阻塞队列作为任务等待队列。
+2. ConcurrentHashMap 源码详解 synchronized & ReentrantLock 在ConcurrentHashMap中的使用
+3. AQS 详解
