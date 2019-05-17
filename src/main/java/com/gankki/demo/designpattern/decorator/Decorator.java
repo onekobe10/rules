@@ -17,11 +17,13 @@ public abstract class Decorator extends SchoolReport{
 	}
 	
 	//成绩单还是要被看到的
+	@Override
 	public void report(){
 		this.sr.report();
 	}
 	
 	//看完毕还是要签名的
+	@Override
 	public void sign(String name){
 		this.sr.sign(name);
 	}

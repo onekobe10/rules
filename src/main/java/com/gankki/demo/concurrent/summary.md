@@ -120,3 +120,4 @@ ScheduledExecutorService的主要实现类是ScheduledThreadPoolExecutor，它�
 1. 线程池中为什么使用阻塞队列而不使用非阻塞队列作为任务等待队列。
 2. ConcurrentHashMap 源码详解 synchronized & ReentrantLock 在ConcurrentHashMap中的使用
 3. AQS 详解
+4. 显式锁的变量是内存可见的吗？ReentrantLock实现的可见性语义是，可以保证锁定语句块内任意变量的内存可见性

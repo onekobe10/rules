@@ -13,3 +13,6 @@
 3. 适配器模式 Adapter Pattern
 4. 迭代器模式 Iterator Pattern
 5. 责任链模式 Chain of Responsibility
+
+#### Gankki's Note
+1. Iterator 方法详解

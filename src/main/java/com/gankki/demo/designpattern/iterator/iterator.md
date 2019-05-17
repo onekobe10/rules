@@ -12,3 +12,26 @@ public interface Collection<E> extends Iterable<E> {
 
 }
 ```
+
+#### Gankki's Note
+1. 迭代器模式中通过返回了一个迭代器对象（Iterator，一般需要自己在容器中实现Iterator的方法），避免了暴露容器对象中内部细节，迪米特法则的法则，最少知道原则的应用。
+2. 迭代器中一般包含一个判断当前节点是否存在的方法，一个获取当前节点的方法，一个删除当前节点的方法。
+3. 迭代器的删除方法，应该完成两个逻辑：一是删除当前元素，二是当前游标指向下一个元素。
+```
+public interface Iterator<E> {
+    
+    boolean hasNext();
+    
+    E next();
+    
+    default void remove() {
+        throw new UnsupportedOperationException("remove");
+    }
+    
+    default void forEachRemaining(Consumer<? super E> action) {
+        Objects.requireNonNull(action);
+        while (hasNext())
+            action.accept(next());
+    }
+}
+```
