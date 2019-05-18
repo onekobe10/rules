@@ -1,4 +1,4 @@
-package com.gankki.demo.designpattern.chain;
+package com.gankki.demo.designpattern.chainofresponsibility;
 
 /**
  *@desc

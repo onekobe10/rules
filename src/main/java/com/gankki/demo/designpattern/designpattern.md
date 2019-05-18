@@ -12,7 +12,15 @@
 2. 装饰模式 Decorator Pattern
 3. 适配器模式 Adapter Pattern
 4. 迭代器模式 Iterator Pattern
-5. 责任链模式 Chain of Responsibility
+5. 责任链模式 Chain of Responsibility Pattern
+6. 工厂方法模式 Factory Method Pattern
+7. 抽象工厂模式 Abstract Factory Pattern
+8. 模板方法模式 Template Method Pattern
+9. 建造者模式 Builder Pattern
+10. 代理模式 Proxy Pattern
 
 #### Gankki's Note
 1. Iterator 方法详解
+2. 代理模式 MVC模式
+3. 工厂方法模式中的PSEC
+
