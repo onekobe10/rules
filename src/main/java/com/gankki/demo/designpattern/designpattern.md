@@ -18,9 +18,11 @@
 8. 模板方法模式 Template Method Pattern
 9. 建造者模式 Builder Pattern
 10. 代理模式 Proxy Pattern
+11. 模型视图控制器模型 MVC Model-View-Controller
 
 #### Gankki's Note
 1. Iterator 方法详解
-2. 代理模式 MVC模式
+2. 代理模式 MVC模型补全
 3. 工厂方法模式中的PSEC
+
 
