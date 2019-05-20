@@ -115,7 +115,11 @@ ScheduledExecutorService的主要实现类是ScheduledThreadPoolExecutor，它�
 
 #### Gankki's Summary
 1. 非阻塞的并发容器一般名字中含有Concurrent关键字,阻塞的容器一般有Blocking关键字，阻塞容器一般都是基于显式锁ReentrantLock实现的。
-2. 竞争条件下的volatile修饰的变量，不能保证期望值的原因是，在多核的CPU中，同时多个CPU同时处理不同线程的运算，导致了不同线程拿到了相同的值进行了计算，导致结果被覆盖，出现了小于期望结果的值。
+2. ReentrantLock实现了和synchronized相同的原子性和可见性。如果需要使用到Lock中新特性才使用Lock，否则相同条件下，推荐使用synchronized。     
+    * Lock中的锁必须在finally中显式关闭，synchronized不需要。
+    * Lock中增加了可中断锁、定时锁、可中断等待等特性。
+3. 当多个线程同时使用CAS 操作一个变量时，只有一个会胜出，并成功更新，其余均会失败。失败的线程不会挂起，仅是被告知失败，并且允许再次尝试，当然也允许实现的线程放弃操作。基于这样的原理，CAS 操作即使没有锁，也可以发现其他线程对当前线程的干扰。       
+原子变量以及乐观锁中大量使用了CAS理论。
 #### 遗留问题
 1. 线程池中为什么使用阻塞队列而不使用非阻塞队列作为任务等待队列。
 2. ConcurrentHashMap 源码详解 synchronized & ReentrantLock 在ConcurrentHashMap中的使用
