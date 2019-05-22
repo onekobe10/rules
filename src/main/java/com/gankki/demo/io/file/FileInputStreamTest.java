@@ -1,4 +1,4 @@
-package com.gankki.demo.io.binaryfile;
+package com.gankki.demo.io.file;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
