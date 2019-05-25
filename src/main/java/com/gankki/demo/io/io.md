@@ -14,13 +14,20 @@ InputStream.read()方法在输入数据可用、检测到文件末尾、抛出�
 读入文件的时候，如果文件为空或者读到了文件的末尾read方法会返回-1     
 在Socket IO中发送方如果不将输出流关闭，接收方就会认为输入流没有结束，直到超时，封装的协议中也会包含信息包的长度让接收方判断一次接收操作是否结束。
 
+
 #### 字节流
 1. InputStream/OutputStream：是抽象基类，有很多面向流的代码，以它们为参数。
-2. ByteArrayInputStream/ByteArrayOutputStream：源和目的地是字节数组，作为输入相当于是适配器，作为输出封装了动态数组，便于使用。
+2. ByteArrayInputStream/ByteArrayOutputStream：源和目的地是字节数组。可以将字节数组封装成字节数组流，是适配器模式的应用。
+    >ByteArrayOutputStream类是在创建它的实例时，程序内部创建一个byte类型数组的缓冲区，然后利用ByteArrayOutputStream和ByteArrayInputStream的实例向数组中写入或读出byte型数据。在网络传输中我们往往要传输很多变量，我们可以利用ByteArrayOutputStream把所有的变量收集到一起，然后一次性把数据发送出去。
+    >ByteArrayOutputStream: 可以捕获内存缓冲区的数据，转换成字节数组     
+    >ByteArrayInputStream: 可以将字节数组转化为输入流    
+    >要创建临时性文件的程序以及网络数据的传输、数据压缩后的传输等可以提高运行的的效率，可以不用访问磁盘。     
+    >流的来源和目的地不一定都是文件，这两个类可以将字节数组当作流输入来源和输出目的地。
 3. DataInputStream/DataOutputStream：装饰类，按基本类型和字符串读写流。
-4. BufferedInputStream/BufferedOutputStream：装饰类，提供缓冲，FileInputStream/FileOutputStream一般总是应该用该类装饰。
+   >可以将Java中的基本数据类型和字符串类型以字节流的形式读取。
+4. BufferedInputStream/BufferedOutputStream：装饰类，提供缓冲。**FileInputStream/FileOutputStream一般总是应该用该类装饰。**
 
-对于文本文件，字节流没有编码的概念，不能按行处理，使用不太方便，更适合的是使用字符流。
+对于文本文件，字节流没有编码的概念，也不能按行处理，使用不太方便，更适合的是使用字符流。
 
 #### 字符流
 1. Reader/Writer：字符流的基类，它们是抽象类。
@@ -29,9 +36,18 @@ InputStream.read()方法在输入数据可用、检测到文件末尾、抛出�
 3. FileReader/FileWriter：输入源和输出目标是文件的字符流。
 4. CharArrayReader/CharArrayWriter: 输入源和输出目标是char数组的字符流。
 5. StringReader/StringWriter：输入源和输出目标是String的字符流。
+    >如果你遇到一个情景是你必须使用一个Reader或者Writer来作为参数传递参数，但你的数据源又仅仅是一个String类型数据，无需从文件中写出，那么此时就可以用到它们。并且值得注意的是StringWriter中，写入的数据只是存在于缓存中，并不会写入实质的存储介质之中。
 6. BufferedReader/BufferedWriter：装饰类，对输入输出流提供缓冲，以及按行读写功能。
 7. PrintWriter：装饰类，可将基本类型和对象转换为其字符串形式输出的类。      
+    >PrintWriter是一个非常方便的类，可以直接指定文件名作为参数，可以指定编码类型，可以自动缓冲，可以自动将多种类型转换为字符串，在输出到文件时，可以优先选择该类。      
 >除了这些类，Java中还有一个类Scanner，类似于一个Reader，但不是Reader的子类，可以读取基本类型的字符串形式，类似于PrintWriter的逆操作。
+
+PrintSteam&PrintWriter的区别：
+1. PrintWriter多了一个 `public PrintWriter (Writer out){}`的构造方法，其余两者的构造方法都一样。
+2. PrintStream在输出字符，将字符转换为字节时采用的是系统默认的编码格式，这样当数据传输另一个平台，而另一个平台使用另外一个编码格式解码时就会出现问题，存在不可控因素。而PrintWriter可以在传入Writer时 `public OutputStreamWriter(OutputStream out, Charset cs){}`可由程序员指定字符转换为字节时的编码格式，这样兼容性和可控性会更好。1.8中PrintSteam已经可以指定字符编码。`private PrintStream(boolean autoFlush, OutputStream out, Charset charset) {}`
+3. PrintStream只能操纵字节流对象输出，如果是字符对象的输出，会按系统的默认编码或者给定的编码转成字节数组输出。PrintWriter既可以处理字节流也可以处理字符流
+4. PrintStream在遇到换行符的时候就会自动刷新，即在调用了println()方法，或者文本中出现“\n”,就会自动flush。PrintWriter则不会，要在构造方法中设置自动刷新，或者手动flush。
+5. System.out.println()中使用的PrintStream，PrintWriter虽然功能更强大，但是PrintSteam出现的早。
 
 在文本文件中，编码非常重要，同一个字符，不同编码方式对应的二进制形式可能是不一样的。
 

@@ -1,4 +1,4 @@
-package com.gankki.demo.io.printwriter;
+package com.gankki.demo.io.print;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import java.util.List;
 public class PrintWriterTest {
 
 	public static void writeStudents(List<Student> students) throws IOException {
-		PrintWriter writer = new PrintWriter("E:/gankkscode/gankkidir/hello4.txt");
+		PrintWriter writer = new PrintWriter("E:/gankkscode/gankkidir/hello8.txt");
 		try{
 			for(Student s : students){
 				writer.println(s.getName()+","+s.getAge()+","+s.getScore());

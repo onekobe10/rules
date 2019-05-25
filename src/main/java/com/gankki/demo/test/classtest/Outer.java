@@ -63,7 +63,7 @@ public class Outer {
 		}
 
 		public void fun() {
-
+			System.out.println("11");
 		}
 	}
 
@@ -80,6 +80,8 @@ public class Outer {
 		System.out.println("------构造函数中的匿名内部类------");
 		new Outer();
 
+		Outer.InnerClass oi = new Outer.InnerClass();
+		oi.fun();
 	}
 
 	/**
@@ -96,7 +98,6 @@ public class Outer {
 		System.out.println("enclosingClass=" + enclosingClass);
 		System.out.println("enclosingConstructor=" + enclosingConstructor);
 		System.out.println("enclosingMethod=" + enclosingMethod);
-
 	}
 
 	private static void getDecalared() {

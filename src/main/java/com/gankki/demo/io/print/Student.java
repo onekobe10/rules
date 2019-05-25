@@ -1,4 +1,4 @@
-package com.gankki.demo.io.printwriter;
+package com.gankki.demo.io.print;
 
 /**
  *@desc
