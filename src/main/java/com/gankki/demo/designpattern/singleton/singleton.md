@@ -11,6 +11,7 @@ Ensure a class has only one instance, and provide a global point of access to it
 单例类的分类：     
 1. 饱汉式单例 推荐
 2. 饿汉式单例
+3. 双检锁
 
 #### 最佳实践
 在Spring中，每个Bean默认为单例的（Singleton），这样做的优点是Spring容器可以管理这些Bean的生命周期，决定在什么时候创建出来，什么时候销毁，销毁的时候如何处理，等等。如果采用非单例模式（Prototype），

@@ -38,20 +38,20 @@ InputStream.read()方法在输入数据可用、检测到文件末尾、抛出�
 5. StringReader/StringWriter：输入源和输出目标是String的字符流。
     >如果你遇到一个情景是你必须使用一个Reader或者Writer来作为参数传递参数，但你的数据源又仅仅是一个String类型数据，无需从文件中写出，那么此时就可以用到它们。并且值得注意的是StringWriter中，写入的数据只是存在于缓存中，并不会写入实质的存储介质之中。
 6. BufferedReader/BufferedWriter：装饰类，对输入输出流提供缓冲，以及按行读写功能。
-7. PrintWriter：装饰类，可将基本类型和对象转换为其字符串形式输出的类。      
+7. PrintWriter：装饰类，可将基本类型和对象转换为其字符串形式输出的类。缓冲大小为默认为8192。      
     >PrintWriter是一个非常方便的类，可以直接指定文件名作为参数，可以指定编码类型，可以自动缓冲，可以自动将多种类型转换为字符串，在输出到文件时，可以优先选择该类。      
 >除了这些类，Java中还有一个类Scanner，类似于一个Reader，但不是Reader的子类，可以读取基本类型的字符串形式，类似于PrintWriter的逆操作。
 
 PrintSteam&PrintWriter的区别：
 1. PrintWriter多了一个 `public PrintWriter (Writer out){}`的构造方法，其余两者的构造方法都一样。
 2. PrintStream在输出字符，将字符转换为字节时采用的是系统默认的编码格式，这样当数据传输另一个平台，而另一个平台使用另外一个编码格式解码时就会出现问题，存在不可控因素。而PrintWriter可以在传入Writer时 `public OutputStreamWriter(OutputStream out, Charset cs){}`可由程序员指定字符转换为字节时的编码格式，这样兼容性和可控性会更好。1.8中PrintSteam已经可以指定字符编码。`private PrintStream(boolean autoFlush, OutputStream out, Charset charset) {}`
-3. PrintStream只能操纵字节流对象输出，如果是字符对象的输出，会按系统的默认编码或者给定的编码转成字节数组输出。PrintWriter既可以处理字节流也可以处理字符流
+3. PrintStream可以使用字节流对象输出，如果是字符对象的输出，会按系统的默认编码或者给定的编码转成字节数组输出。PrintWriter既可以处理字节流也可以处理字符流
 4. PrintStream在遇到换行符的时候就会自动刷新，即在调用了println()方法，或者文本中出现“\n”,就会自动flush。PrintWriter则不会，要在构造方法中设置自动刷新，或者手动flush。
-5. System.out.println()中使用的PrintStream，PrintWriter虽然功能更强大，但是PrintSteam出现的早。
+5. System.out.println()中使用的是PrintStream，PrintWriter虽然功能更强大，但是PrintSteam出现的早。
 
 在文本文件中，编码非常重要，同一个字符，不同编码方式对应的二进制形式可能是不一样的。
 
-UTF-16BE也是Java内存中对字符的编码方式。
+UTF-16BE是Jvm内部对字符的编码方式。
 
 字节流是按字节读取的，而字符流则是按char读取的，一个char在文件中保存的是几个字节与编码有关，但字符流给我们封装了这种细节，我们操作的对象就是char。
 
@@ -59,7 +59,7 @@ Reader中处理的单位是char，比如read读取的是一个char，取值范�
 
 FileReader/FileWriter的输入和目的是文件。FileReader是InputStreamReader的子类
 
-需要注意的是，FileReader/FileWriter不能指定编码类型，只能使用默认编码，如果需要指定编码类型，可以使用InputStreamReader/OutputStreamWriter。
+**需要注意的是，FileReader/FileWriter不能指定编码类型，只能使用默认编码，如果需要指定编码类型，可以使用InputStreamReader/OutputStreamWriter。**
 
 CharArrayWriter与ByteArrayOutputStream类似，它的输出目标是char数组，这个数组的长度可以根据数据内容动态扩展。
 
@@ -67,15 +67,13 @@ StringReader/StringWriter与CharArrayReader/CharArrayWriter类似，只是输入
 
 之所以要将char数组/String与Reader/Writer进行转换也是为了能够方便的参与Reader/Writer构成的协作体系，复用代码。
 
-BufferedReader/BufferedWriter是装饰类，提供缓冲，以及按行读写功能,缓冲大小为默认为8192。
-
 FileReader/FileWriter是没有缓冲的，也不能按行读写，所以，一般应该在它们的外面包上对应的缓冲类。
 
 在Linux系统中，标准输入输出流也是一种重要的协作机制。很多命令都很小，只完成单一功能，实际完成一项工作经常需要组合使用多个命令，它们协作的模式就是通过标准输入输出流，每个命令都可以从标准输入接受参数，处理结果写到标准输出，这个标准输出可以连接到下一个命令作为标准输入，构成管道式的处理链条。比如，查找一个日志文件access.log中"127.0.0.1"出现的行数，可以使用命令：
 `cat access.log | grep 127.0.0.1 | wc -l`       
 有三个程序cat, grep, wc，|是管道符号，它将cat的标准输出重定向为了grep的标准输入，而grep的标准输出又成了wc的标准输入。
 
-写文件时，可以优先考虑PrintWriter，因为它使用方便，支持自动缓冲、支持指定编码类型、支持类型转换等。读文件时，如果需要指定编码类型，需要使用InputStreamReader，不需要，可使用FileReader，但都应该考虑在外面包上缓冲类BufferedReader。
+**写文件时，可以优先考虑PrintWriter，因为它使用方便，支持自动缓冲、支持指定编码类型、支持类型转换等。读文件时，如果需要指定编码类型，需要使用InputStreamReader，不需要，可使用FileReader，但都应该考虑在外面包上缓冲类BufferedReader。**
 
 
 

@@ -39,4 +39,8 @@ package com.gankki.demo.concurrent.thread;
  *  Thread.sleep(long millis) throws InterruptedException
  * 		让当前线程睡眠一段时间，在睡眠的过程中，不会失去锁和其他资源。
  *
+ * 检测一个线程是否拥有一个对象的锁的方法：
+ *  Thread.holdsLock(obj); 当且仅当当前线程持有obj的同步锁时返回为true
+ *   public static native boolean holdsLock(Object obj);
+ *
  */
