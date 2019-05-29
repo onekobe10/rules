@@ -25,8 +25,13 @@ public class LinkedHashMapTest {
 		}
 		
 		System.out.println("-----------------------");
-		
-		Map<String,Integer> seqMap = new LinkedHashMap<>();
+
+		/**
+		 * LinkedHashMap支持两种顺序，一种是插入顺序，另外一种是访问顺序。
+		 *
+		 * 插入顺序容易理解，先添加的在前面，后添加的在后面，修改操作不影响顺序。
+		 */
+		Map<String,Integer> seqMap = new LinkedHashMap<>(10, 0.75f, true);
 
 		seqMap.put("c", 100);
 		seqMap.put("d", 200);
