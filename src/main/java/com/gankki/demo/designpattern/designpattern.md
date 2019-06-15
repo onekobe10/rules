@@ -19,11 +19,15 @@
 9. 建造者模式 Builder Pattern
 10. 代理模式 Proxy Pattern
 11. 模型视图控制器模型 MVC Model-View-Controller
+12. 原型模式 Prototype Pattern
+13. 中介者模式 Mediator Pattern
+14. 命令模式 Command Pattern
 
 #### Gankki's Note
 1. Iterator 方法详解
 2. 代理模式 MVC模型补全
 3. 工厂方法模式中的PSEC
-4. 策略模式
+4. 模板方法模式和策略模式的区别
+5. 中介者模式疑问
 
 

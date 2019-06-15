@@ -151,10 +151,12 @@ public void remove() {
 2. ThreadLocal经常用于存储上下文信息，避免在不同代码间来回传递，简化代码。
 3. 每个线程都有一个Map，调用ThreadLocal对象的get/set实际就是以ThreadLocal对象为键读写当前线程的该Map。
 4. 在线程池中使用ThreadLocal，需要注意，确保初始值是符合期望的。
-
-
-
-
+5. 20190615
+> 1. 本地线程变量是通过initValue方法初始化的，默认为null，可以重写initialValue方法。
+> 2. 如果重写了initValue方法，ThreadLocal中会在每个线程中通过initValue生成一个初始化的value。因此如果本地线程中放的变量都是由initValue决定的。如果每次调用initValue方法都会new一个新的对象就是线程安全的，如果initValue方法返回的是全局变量，每个线程都可能更改这个全局变量的值就是线程不安全的。
+> 3. 因为每次都会创建一个新的对象，浪费内存空间，因此这个对象在ThreadLocalMap中是一个弱引用类型，会在堆内存不够用时回收掉。
+> 4. ThreadLocalMap中存放元素的实现为Entity，方便回收,`static class Entry extends WeakReference<ThreadLocal<?>>`
+> 5. 在一个请求的过程中需要频繁实例化而属性由相同的类，可以使用ThreadLocal，这样可以保证在一个请求线程中只会实例化一次这个对象，不会造成资源浪费，而且可以在内存紧张时被GC优先回收，ex:ThreadLocal中SimpleDateFormat
 
 
 

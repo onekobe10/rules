@@ -75,12 +75,9 @@ FileReader/FileWriter是没有缓冲的，也不能按行读写，所以，一�
 
 **写文件时，可以优先考虑PrintWriter，因为它使用方便，支持自动缓冲、支持指定编码类型、支持类型转换等。读文件时，如果需要指定编码类型，需要使用InputStreamReader，不需要，可使用FileReader，但都应该考虑在外面包上缓冲类BufferedReader。**
 
+Java中提供的IO有关的API，在文件处理的时候，其实依赖操作系统层面的IO操作实现的。比如在Linux 2.6以后，Java中NIO和AIO都是通过epoll来实现的，而在Windows上，AIO是通过IOCP来实现的。可以把Java中的BIO、NIO和AIO理解为是Java语言对操作系统的各种IO模型的封装。
 
-
-
-
-
-
+在Linux(UNIX)操作系统中，共有五种IO模型，分别是：阻塞IO模型、非阻塞IO模型、IO复用模型、信号驱动IO模型以及异步IO模型。
 
 
 
