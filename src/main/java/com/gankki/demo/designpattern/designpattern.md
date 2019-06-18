@@ -22,12 +22,16 @@
 12. 原型模式 Prototype Pattern
 13. 中介者模式 Mediator Pattern
 14. 命令模式 Command Pattern
+15. 策略模式 Strategy Pattern
+16. 组合模式 Composite Pattern
+17. 观察者模式 Observer Pattern
 
 #### Gankki's Note
 1. Iterator 方法详解
 2. 代理模式 MVC模型补全
 3. 工厂方法模式中的PSEC
 4. 模板方法模式和策略模式的区别
-5. 中介者模式疑问
+5. 中介者模式优化
+6. 命令模式的优点
 
 
