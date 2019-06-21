@@ -1,4 +1,4 @@
-package com.gankki.demo.designpattern.mediator.section3;
+package com.gankki.demo.designpattern.mediator.section1;
 
 /**
  *@desc
@@ -8,7 +8,6 @@ package com.gankki.demo.designpattern.mediator.section3;
 public class Mediator extends AbstractMediator {
 
 	//中介者最重要的方法
-	@Override
 	public void execute(String str,Object...objects){
 		if(str.equals("purchase.buy")){ //采购电脑
 			this.buyComputer((Integer)objects[0]);

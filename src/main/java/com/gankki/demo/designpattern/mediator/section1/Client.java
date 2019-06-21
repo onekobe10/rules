@@ -1,4 +1,4 @@
-package com.gankki.demo.designpattern.mediator.section2;
+package com.gankki.demo.designpattern.mediator.section1;
 
 /**
  *@desc

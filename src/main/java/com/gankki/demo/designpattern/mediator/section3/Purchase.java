@@ -1,11 +1,11 @@
-package com.gankki.demo.designpattern.mediator.section2;
+package com.gankki.demo.designpattern.mediator.section3;
 
 /**
  *@desc 采购类
  *@author liuhao
  *@createDate 2019/6/11
  */
-public class Purchase extends AbstractColleague{
+public class Purchase extends AbstractColleague {
 	
 	public Purchase(AbstractMediator _mediator){
 		super(_mediator);

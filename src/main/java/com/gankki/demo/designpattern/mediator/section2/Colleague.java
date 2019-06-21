@@ -1,4 +1,4 @@
-package com.gankki.demo.designpattern.mediator.section3;
+package com.gankki.demo.designpattern.mediator.section2;
 
 /**
  *@desc 同事类

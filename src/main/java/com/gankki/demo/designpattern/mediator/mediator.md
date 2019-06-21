@@ -16,3 +16,5 @@ explicitly,and it lets you vary their interaction independently.
 1. N个对象之间产生了相互依赖的关系（N > 2）
 2. 多个对象有依赖关系，但是依赖的行为尚不确定或者有发生改变的可能，可以使用中介者模式，降低变更引起的风险扩散
 3. 产品开发。MVC框架，把中介者模式应用到产品中，可以提高产品的性能和扩展性
+#### 总结
+1. section2是抽象实现，section3是section1的升级版具体实现。
