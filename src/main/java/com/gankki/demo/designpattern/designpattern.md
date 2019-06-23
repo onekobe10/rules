@@ -18,13 +18,20 @@
 8. 模板方法模式 Template Method Pattern
 9. 建造者模式 Builder Pattern
 10. 代理模式 Proxy Pattern
-11. 模型视图控制器模型 MVC Model-View-Controller
-12. 原型模式 Prototype Pattern
-13. 中介者模式 Mediator Pattern
-14. 命令模式 Command Pattern
-15. 策略模式 Strategy Pattern
-16. 组合模式 Composite Pattern
-17. 观察者模式 Observer Pattern
+11. 原型模式 Prototype Pattern
+12. 中介者模式 Mediator Pattern
+13. 命令模式 Command Pattern
+14. 策略模式 Strategy Pattern
+15. 组合模式 Composite Pattern
+16. 观察者模式 Observer Pattern
+17. 门面模式 Facade Pattern
+18. 备忘录模式 Memento Pattern
+19. 访问者模式 visitor Pattern
+20. 状态模式 State Pattern
+21. 解释器模式 Interpreter Pattern
+22. 享元模式 Flyweight Pattern
+23. 桥梁模式 Bridge Pattern
+24. 模型视图控制器模型 MVC Model-View-Controller
 
 #### Gankki's Note
 1. Iterator 方法详解
@@ -33,5 +40,6 @@
 4. 模板方法模式和策略模式的区别
 5. 中介者模式优化
 6. 命令模式的优点
+7. 观察模式中广播链和责任链模式的区别
 
 
