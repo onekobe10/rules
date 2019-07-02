@@ -1,4 +1,4 @@
-package com.gankki.demo.test.enumTest;
+package com.gankki.demo.test.enumtest;
 
 public interface Food {
 
