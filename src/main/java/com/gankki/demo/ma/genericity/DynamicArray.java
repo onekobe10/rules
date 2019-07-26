@@ -138,7 +138,7 @@ public class DynamicArray<E> {
 		}
 	}
 
-	public void copyTo(DynamicArray<E> dest){
+	public void copyTo(DynamicArray<? super E> dest){
 		for(int i=0; i<size; i++){
 			dest.add(get(i));
 		}
