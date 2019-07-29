@@ -49,10 +49,12 @@ public class Test {
 		// 因为不能确定子类的类型不能往 ？ extends C 中新增元素，但是因为有上限可以获取元素
 		// extends consumer
 		//extendsList.add(new D());
-		// 2. 第二种情况
 		testExtendsArray(dList);
-		// 3. 第三种情况
-		// test();
+		// 2. 第二种情况
+		Function function = c -> new D();
+		test(function);
+
+		// 父类能出现的地方，子类一定能出现，里氏代换原则
 	}
 
 	public static void testSuperArray(List<? super C> cList) {
