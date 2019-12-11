@@ -1,10 +1,13 @@
 package com.gankki.demo.test.innerclass;
 
+import lombok.Data;
+
 /**
  *@desc
  *@author liuhao
  *@createDate 2019/8/1
  */
+@Data
 public class FieldOuterTest {
     private int a = 100;
 

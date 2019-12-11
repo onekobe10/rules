@@ -1,12 +1,10 @@
 package com.gankki.demo.test.datetimeformat;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -33,5 +31,8 @@ public class DateTest {
 		Map<String, Object> map = new HashMap<>();
 		map.put("test", LocalDateTime.now());
 		// System.out.println(JSONObject.toJSONString(map));
+		System.out.println("***************");
+		System.out.println(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+		System.out.println(LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd")));
 	}
 }

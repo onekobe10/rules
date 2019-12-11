@@ -24,14 +24,13 @@ public class OptionalTest {
             System.out.println(s);
         });
 
-
+        System.out.println("orelse............start.......");
         System.out.println(Optional.ofNullable(null).orElse("else"));
         System.out.println(Optional.ofNullable("1").orElse("else"));
 
-        System.out.println(Optional.ofNullable(null).orElseGet(() -> {
-             return "gankki";
-        }));
-
+        System.out.println(Optional.ofNullable(null).orElseGet(() -> "123"));
+        System.out.println(Optional.ofNullable("2 ").orElseGet(() -> "456"));
+        System.out.println("orelse.............end......");
         try {
             Optional.ofNullable(null).orElseThrow(() -> {
                 throw new NullPointerException("111");

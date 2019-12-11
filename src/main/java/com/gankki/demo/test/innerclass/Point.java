@@ -15,6 +15,6 @@ public class Point {
     }
 
     public double distance(Point point) {
-        return 1.0d;
+        return 1.2d;
     }
 }
