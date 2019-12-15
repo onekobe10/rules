@@ -7,23 +7,23 @@ package com.gankki.demo.test.innerclass;
  */
 public class AnonyInnerClass {
 
-    public void test(final int x, final int y){
-        final String a = "ssss";
+    public void test(int x, int y){
+        String a1 = "ssss";
         FieldOuterTest s1 = new FieldOuterTest();
-        Point p = new Point(2,3){
 
+        Point p = new Point(3,4){
             @Override
-            public double distance(Point point) {
-                System.out.println("b............." + a);
-                System.out.println(x + "....." + y);
+            public double distance() {
                 s1.setA(1);
+                System.out.println("a1............." + a1);
+                System.out.println(x + "....." + y);
+                System.out.println(this.getA() + "......" + this.getB());
                 return 1.2d;
             }
         };
-        System.out.println(p.distance(new Point(x, y)));
+        System.out.println(p.distance());
         System.out.println(s1.getA());
     }
-
 
     public static void main(String[] args){
         AnonyInnerClass a1 = new AnonyInnerClass();
