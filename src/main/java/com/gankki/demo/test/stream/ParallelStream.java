@@ -11,7 +11,7 @@ import java.util.List;
 public class ParallelStream {
 
     /**
-     * ArrayList 线程不安全
+     *
      * @param args
      */
     public static void main(String[] args){
@@ -20,6 +20,9 @@ public class ParallelStream {
         for (int i = 0; i < 100; i++) {
             integerList.add(i);
         }
+
+        integerList.parallelStream().forEachOrdered(System.out::println);                                                                                                                  ;
+
         List<Integer> parallelList = Collections.synchronizedList(new ArrayList<>());
         //List<Integer> parallelList = new ArrayList<>();
         integerList.stream()
