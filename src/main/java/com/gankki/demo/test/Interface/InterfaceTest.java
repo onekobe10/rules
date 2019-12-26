@@ -13,7 +13,12 @@ public interface InterfaceTest {
 		return "hello world";
 	}
 
-	default void testDefault(){
+	default void testDefault1(){
+		System.out.println("default method test");
+	}
+
+	default void testDefault2(){
+		testDefault1();
 		System.out.println("default method test");
 	}
 }

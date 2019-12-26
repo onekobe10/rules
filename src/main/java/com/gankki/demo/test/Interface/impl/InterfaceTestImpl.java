@@ -19,8 +19,10 @@ public class InterfaceTestImpl implements InterfaceTest {
 	public static void main(String[] args){
 		InterfaceTest interfaceTest = new InterfaceTestImpl();
 		interfaceTest.testPublic();
-		interfaceTest.testDefault();
+		interfaceTest.testDefault1();
+
 		InterfaceTest.testStatic();
+
 
 	}
 }
