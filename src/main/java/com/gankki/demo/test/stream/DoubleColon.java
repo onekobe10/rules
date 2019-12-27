@@ -1,13 +1,10 @@
 package com.gankki.demo.test.stream;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -58,9 +55,10 @@ public class DoubleColon {
 		BiConsumer<DoubleColon,String> toLowerConsumer = DoubleColon::toLower;
 		toLowerConsumer.accept(new DoubleColon(),"toLowerConsumer");
 
+		//Function<DoubleColon, String> function = DoubleColon::toInt;
+
 		BiFunction<DoubleColon,String,Integer> toIntFunction = DoubleColon::toInt;
 		int i = toIntFunction.apply(new DoubleColon(),"toInt");
-
 
 		List<String> collected = new ArrayList<>();
 		collected.add("alpha");
