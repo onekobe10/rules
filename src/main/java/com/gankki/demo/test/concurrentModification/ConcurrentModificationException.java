@@ -1,4 +1,4 @@
-package com.gankki.demo.test.ConcurrentModification;
+package com.gankki.demo.test.concurrentModification;
 
 import java.util.ArrayList;
 import java.util.Arrays;
