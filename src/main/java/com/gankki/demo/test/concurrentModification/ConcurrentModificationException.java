@@ -45,7 +45,7 @@ public class ConcurrentModificationException {
 
 		Iterator it = list.iterator();
 		/**
-		 * 需要注意的是，调用remove方法前必须先调用next,获取当前迭代对象的下标lastRet
+		 * 需要注意的是，调用remove方法前必须先调用next,获取当前迭代对象的下标lastRet 1
 		 */
 		while (it.hasNext()) {
 			if (it.next().equals("3")) {
