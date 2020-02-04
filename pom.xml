@@ -63,7 +63,7 @@
         <commons-net.version>3.3</commons-net.version>
         <commons-util.version>0.0.2.1</commons-util.version>
         <!-- 权限管理 -->
-        <shiro.version>1.2.4</shiro.version>
+        <shiro.version>1.5.0</shiro.version>
 
         <!-- webservice -->
         <cxf.version>2.7.6</cxf.version>
