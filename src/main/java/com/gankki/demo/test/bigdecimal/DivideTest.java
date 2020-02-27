@@ -1,8 +1,12 @@
 package com.gankki.demo.test.bigdecimal;
 
+import com.beust.jcommander.internal.Lists;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -28,6 +32,15 @@ public class DivideTest {
         // 十以内的随机数
         int number = new Random().nextInt(10) + 1;
         System.out.println(number);
+
+        List<String> list =  Lists.newArrayList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        int listSize = list.size();
+        Map<Long, BigDecimal> userMap = new HashMap<>((int) Math.ceil(listSize * 4.0 / 3));
+        System.out.println(userMap.size());
+
     }
 
 }
