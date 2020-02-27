@@ -715,6 +715,11 @@
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

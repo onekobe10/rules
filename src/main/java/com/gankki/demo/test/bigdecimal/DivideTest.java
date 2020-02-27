@@ -3,6 +3,7 @@ package com.gankki.demo.test.bigdecimal;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 /**
  * @author liuhao
@@ -21,6 +22,12 @@ public class DivideTest {
         System.out.println(d.toString());
 
         Assert.notNull(a);
+
+        //String result = HttpUtil.get("/confirmQuickTransferState?startDate",60000);
+
+        // 十以内的随机数
+        int number = new Random().nextInt(10) + 1;
+        System.out.println(number);
     }
 
 }
