@@ -818,10 +818,207 @@ public void executeTask(Runnable runnable) {
 }
 ```
 
+# 数据结构篇
+1. 使用 HashSet 判断元素是否重复
+2. 使用 HashMap 存储键值对
+3. 使用 ThreadLocal 存储线程专有对
+```
+ThreadLocal 提供了线程专有对象，可以在整个线程生命周期中随时取用，极大地方便了一些逻辑的实现。
+常见的 ThreadLocal 用法主要有两种：
+1、保存线程上下文对象，避免多层级参数传递；
+2、保存非线程安全对象，避免多线程并发调用。
+```
+4. 使用 Pair(对) 实现成对结果的返回
+```
+在 JDK 中，没有提供原生的 Pair 数据结构，也可以使用 Map::Entry 代替。
+不过， Apache 的 commons-lang3 包中的 Pair 类更为好用。
+如果不能重复成对，使用 Map，可以重复的成对可以使用 lang3 的 Pair。
+```
+5. 定义枚举类实现取值和描述
+```
+Enum 类型就是一个语法糖，编译器帮我们做了语法的解析和编译。
+通过反编译，可以看到 Java 枚举编译后实际上是生成了一个类，
+该类继承了  java.lang.Enum<E> ，并添加了 values()、valueOf() 等枚举类型通用方法。
+```
+6. 泛型 PESC
+```
+上界通配符（extends）：
+上界通配符为 ”extends ”，可以接受其指定类型或其子类作为泛参。其还有一种特殊的形式，可以指定其不仅要是指定类型的子类，而且还要实现某些接口。例如： List<? extends A> 表明这是 A 某个具体子类的 List ，保存的对象必须是A或A的子类。对于 List<? extends A> 列表，不能添加 A 或 A 的子类对象，只能获取A的对象。
+下界通配符（super）：
+下界通配符为”super”，可以接受其指定类型或其父类作为泛参。例如：List<? super A> 表明这是 A 某个具体父类的 List ，保存的对象必须是 A 或 A 的超类。对于 List<? super A> 列表，能够添加 A 或 A 的子类对象，但只能获取 Object 的对象。
+PECS（Producer Extends Consumer Super）原则：作为生产者提供数据（往外读取）时，适合用上界通配符（extends）；作为消费者消费数据（往里写入）时，适合用下界通配符（super）。
+在日常编码中，比较常用的是上界通配符（extends），用于限定泛型类型的父类。例子代码如下：
+/** 数字支撑类 */
+@Getter
+@Setter
+@ToString
+public class NumberHolder<T extends Number> {
+   /** 通用取值 */
+   private T value;
 
+   /** 构造函数 */
+   public NumberHolder() {}
 
+   /** 构造函数 */
+   public NumberHolder(T value) {
+       this.value = value;
+  }
+}
+/** 打印取值函数 */
+public static <T extends Number> void printValue(GenericHolder<T> holder) {
+   System.out.println(holder.getValue());
+}
+```
 
+# 函数篇
+1. 当一个函数超过80行后，就属于超大函数，需要进行拆分。
+> 1. 每一个代码块都可以封装为一个函数
+> 2. 每一个循环体都可以封装为一个函数
+> 3. 每一个条件体都可以封装为一个函数
+2. 同一函数内代码块级别尽量一致
+3. 封装相同功能代码为函数、封装相似代码为函数
+4. 封装获取参数值函数
+5. 减少函数代码层级
+> 如果要使函数优美，建议函数代码层级在1-4之间，过多的缩进会让函数难以阅读。
+```
+1. 利用return提前返回函数
+// 获取用户余额函数
+public Double getUserBalance(Long userId) {
+    User user = getUser(userId);
+    if (Objects.nonNull(user)) {
+        UserAccount account = user.getAccount();
+        if (Objects.nonNull(account)) {
+            return account.getBalance();
+        }
+    }
+    return null;
+}
 
+// 获取用户余额函数
+public Double getUserBalance(Long userId) {
+    // 获取用户信息
+    User user = getUser(userId);
+    if (Objects.isNull(user)) {
+        return null;
+    }
+
+    // 获取用户账户
+    UserAccount account = user.getAccount();
+    if (Objects.isNull(account)) {
+        return null;
+    }
+
+    // 返回账户余额
+    return account.getBalance();
+}
+
+2. 利用continue提前结束循环
+// 获取合计余额函数
+public double getTotalBalance(List<User> userList) {
+    // 初始合计余额
+    double totalBalance = 0.0D;
+
+    // 依次累加余额
+    for (User user : userList) {
+        // 获取用户账户
+        UserAccount account = user.getAccount();
+        if (Objects.nonNull(account)) {
+            // 累加用户余额
+            Double balance = account.getBalance();
+            if (Objects.nonNull(balance)) {
+                totalBalance += balance;
+            }
+        }
+    }
+
+    // 返回合计余额
+    return totalBalance;
+}
+
+// 获取合计余额函数
+public double getTotalBalance(List<User> userList) {
+    // 初始合计余额
+    double totalBalance = 0.0D;
+
+    // 依次累加余额
+    for (User user : userList) {
+        // 获取用户账户
+        UserAccount account = user.getAccount();
+        if (Objects.isNull(account)) {
+            continue;
+        }
+
+        // 累加用户余额
+        Double balance = account.getBalance();
+        if (Objects.nonNull(balance)) {
+            totalBalance += balance;
+        }
+    }
+
+    // 返回合计余额
+    return totalBalance;
+}
+```
+6. 封装条件表达式函数
+```
+// 获取门票价格函数
+public double getTicketPrice(Date currDate) {
+    if (Objects.nonNull(currDate) && currDate.after(DISCOUNT_BEGIN_DATE)
+        && currDate.before(DISCOUNT_END_DATE)) {
+        return TICKET_PRICE * DISCOUNT_RATE;
+    }
+    return TICKET_PRICE;
+}
+
+// 获取门票价格函数
+public double getTicketPrice(Date currDate) {
+    if (isDiscountDate(currDate)) {
+        return TICKET_PRICE * DISCOUNT_RATE;
+    }
+    return TICKET_PRICE;
+}
+
+// 是否折扣日期函数
+private static boolean isDiscountDate(Date currDate) {
+    return Objects.nonNull(currDate) && 
+currDate.after(DISCOUNT_BEGIN_DATE)
+        && currDate.before(DISCOUNT_END_DATE);
+}
+```
+7. 尽量避免不必要的空指针判断
+> 1. 自己了解的代码，尽量避免不必要的空指针判断。
+> 2. 对于第三方中间件和系统接口，必须做好空指针判断，以保证代码的健壮性。
+8. MyBatis查询函数返回列表和数据项不为空，可以不用空指针判断
+> 确定不会为空的查询，避免判空
+> 避免不必要的空指针判断，精简业务代码处理逻辑，提高业务代码运行效率；
+> 这些不必要的空指针判断，基本属于永远不执行的Death代码，删除有助于代码维护。
+8. 内部函数参数尽量使用基础类型
+9. 内部函数返回值、方法参数尽量使用基础类型
+10. 尽量避免返回的数组和列表为null
+> 保证返回的数组和列表不为null, 避免调用函数的空指针判断。
+11. 封装函数传入参数(大于两个时)
+12. 尽量用函数替换匿名内部类的实现
+13. 利用return精简不必要的代码
+14. 删除不必要的变量
+```
+// 查询用户函数
+public List<UserDO> queryUser(Long id, String name) {
+    UserQuery userQuery = new UserQuery();
+    userQuery.setId(id);
+    userQuery.setName(name);
+    List<UserDO> userList = userDAO.query(userQuery);
+    return userList;
+}
+
+// 查询用户函数
+public List<UserDO> queryUser(Long id, String name) {
+    UserQuery userQuery = new UserQuery();
+    userQuery.setId(id);
+    userQuery.setName(name);
+    return userDAO.query(userQuery);
+}
+```
+15. 利用临时变量优化代码，避免函数的级联操作
 
 
 
