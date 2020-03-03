@@ -36,8 +36,8 @@ public class Gankki {
         // 4. 空数组，作为方法的返回值，避免了调用方判空
         Collections.emptyList();
 
-        // 5. HttpUtil 工具
-        String result = HttpUtil.get("www.baidu.com", 60000);
+        // 5. HttpUtil 工具 retry 机制
+        String result = HttpUtil.post("www.baidu.com", "body",60000);
 
 
     }
