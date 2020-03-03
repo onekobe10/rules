@@ -2,11 +2,9 @@ package com.gankki.demo.test.efficiency;
 
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.MapUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  *
@@ -25,6 +23,9 @@ public class FunctoinTest {
         List<String> listEmpty = new ArrayList<>();
         CollectionUtils.isNotEmpty(listEmpty);
         CollectionUtils.isEmpty(listEmpty);
+        // 2.1 对象判空
+        Map<String, String> map = new HashMap<>();
+        MapUtils.isNotEmpty(map);
 
         // 3. 对象判空
         String objectNull= "s";
