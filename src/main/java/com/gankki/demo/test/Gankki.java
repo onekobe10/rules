@@ -1,20 +1,20 @@
-package com.gankki.demo.test.efficiency;
+package com.gankki.demo.test;
 
 
+import cn.hutool.http.HttpUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 
 import java.util.*;
 
 /**
- *
  * @author liuhao
  * @date 2020/2/29
  */
-public class FunctoinTest {
+public class Gankki {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // 1.通用相等方法
         boolean equals = Objects.equals("name", "thisName");
         System.out.println(equals);
@@ -28,7 +28,7 @@ public class FunctoinTest {
         MapUtils.isNotEmpty(map);
 
         // 3. 对象判空
-        String objectNull= "s";
+        String objectNull = "s";
         if (Objects.isNull(objectNull)) {
             // return null;
         }
@@ -36,6 +36,8 @@ public class FunctoinTest {
         // 4. 空数组，作为方法的返回值，避免了调用方判空
         Collections.emptyList();
 
+        // 5. HttpUtil 工具
+        String result = HttpUtil.get("www.baidu.com", 60000);
 
 
     }
