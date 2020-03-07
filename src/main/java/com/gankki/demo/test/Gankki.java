@@ -5,6 +5,7 @@ import cn.hutool.http.HttpUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -37,9 +38,19 @@ public class Gankki {
         Collections.emptyList();
 
         // 5. HttpUtil 工具 retry 机制
-        String result = HttpUtil.post("www.baidu.com", "body",60000);
+        HttpUtil.post("http://www.baidu.com", "body",60000);
 
-
+        // 6. 浮点型的计算会丢失精度，使用BigDecimal的String构造器来解决商业运算上丢失精度的问题。
+        BigDecimal a = new BigDecimal(1.01);
+        BigDecimal b = new BigDecimal(1.02);
+        BigDecimal c = new BigDecimal("1.01");
+        BigDecimal d = new BigDecimal("1.02");
+        System.out.println(1.01 + 1.02);
+        System.out.println(a.add(b));
+        System.out.println(c.add(d));
+        
+        
+        
     }
 
 }
