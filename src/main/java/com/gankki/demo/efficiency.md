@@ -998,6 +998,19 @@ currDate.after(DISCOUNT_BEGIN_DATE)
 > 保证返回的数组和列表不为null, 避免调用函数的空指针判断。
 11. 封装函数传入参数(大于两个时)
 12. 尽量用函数替换匿名内部类的实现
+```
+// 查询过期日期接口
+interface QueryExpiredDateOperator {
+    // 查询过期日期
+    public List<Date> queryExpiredDate(Integer remainDays);
+}
+
+// 清除过期操作接口
+interface CleanExpiredDataOperator {
+    // 清除过期数据
+    public void cleanExpiredData(Date expiredDate);
+}
+```
 13. 利用return精简不必要的代码
 14. 删除不必要的变量
 ```
@@ -1019,8 +1032,6 @@ public List<UserDO> queryUser(Long id, String name) {
 }
 ```
 15. 利用临时变量优化代码，避免函数的级联操作
-
-
 
 
 

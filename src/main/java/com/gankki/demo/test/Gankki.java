@@ -49,8 +49,9 @@ public class Gankki {
         System.out.println(a.add(b));
         System.out.println(c.add(d));
         
-        
-        
+        // 7. 字符串占位符
+        // throw new BizRuntimeException(String.format("订单(%s)不存在", orderId));
+        System.out.println(String.format("订单(%s)不存在", 1));
     }
 
 }
