@@ -14,7 +14,6 @@ import java.util.*;
  */
 public class Gankki {
 
-
     public static void main(String[] args) {
         // 1.通用相等方法
         boolean equals = Objects.equals("name", "thisName");
@@ -52,6 +51,24 @@ public class Gankki {
         // 7. 字符串占位符
         // throw new BizRuntimeException(String.format("订单(%s)不存在", orderId));
         System.out.println(String.format("订单(%s)不存在", 1));
+
+        // 8. 输出结果 1,3
+        List<String> list = Arrays.asList("1", "2", "3");
+        list.stream().forEach(s -> {
+                    if (Objects.equals("2", s)) {
+                        // forEach 中 return 相当于 for 循环中的 continue
+                        return;
+                    }
+                    System.out.println(s);
+                }
+        );
+
+        /* 9. Stream mapReduce 函数的使用
+        List<UserJfbProfitHisResult> profitHistoryList = jiuFuBaoAccountController.queryJfbProfitHistoryFor4Fund(uParam);
+        BigDecimal totalEarning = profitHistoryList.stream()
+                .map(jfbProfit -> new BigDecimal(jfbProfit.getProfit())).reduce(BigDecimal.ZERO, BigDecimal::add);
+        */
+
     }
 
 }
