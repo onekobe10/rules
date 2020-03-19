@@ -2,6 +2,7 @@ package com.gankki.demo.test;
 
 
 import cn.hutool.http.HttpUtil;
+import com.gankki.demo.dto.MapReduceDto;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 
@@ -63,11 +64,10 @@ public class Gankki {
                 }
         );
 
-        /* 9. Stream mapReduce 函数的使用
-        List<UserJfbProfitHisResult> profitHistoryList = jiuFuBaoAccountController.queryJfbProfitHistoryFor4Fund(uParam);
-        BigDecimal totalEarning = profitHistoryList.stream()
-                .map(jfbProfit -> new BigDecimal(jfbProfit.getProfit())).reduce(BigDecimal.ZERO, BigDecimal::add);
-        */
+        // 9. Stream mapReduce 函数的使用
+        List<MapReduceDto> profitHistoryList = new ArrayList<>();
+        BigDecimal totalNum = profitHistoryList.stream().map(MapReduceDto::getNum).reduce(BigDecimal.ZERO, BigDecimal::add);
+
 
     }
 
