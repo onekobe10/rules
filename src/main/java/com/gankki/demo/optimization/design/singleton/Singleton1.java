@@ -1,4 +1,4 @@
-package com.gankki.demo.optimization.design;
+package com.gankki.demo.optimization.design.singleton;
 
 
 import java.util.ArrayList;

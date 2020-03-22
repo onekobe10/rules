@@ -1,4 +1,4 @@
-package com.gankki.demo.optimization.design;
+package com.gankki.demo.optimization.design.singleton;
 
 /**
  * 枚举内布类实现懒汉式
