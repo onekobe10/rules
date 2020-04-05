@@ -2,6 +2,7 @@ package com.gankki.demo.test;
 
 
 import cn.hutool.http.HttpUtil;
+import com.beust.jcommander.internal.Lists;
 import com.gankki.demo.dto.MapReduceDto;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
@@ -68,6 +69,9 @@ public class Gankki {
         List<MapReduceDto> profitHistoryList = new ArrayList<>();
         BigDecimal totalNum = profitHistoryList.stream().map(MapReduceDto::getNum).reduce(BigDecimal.ZERO, BigDecimal::add);
 
+        // 10. List中删除数据
+        List<String> expList = Lists.newArrayList();
+        expList.removeIf("3"::equals);
 
     }
 
