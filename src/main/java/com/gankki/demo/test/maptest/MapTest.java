@@ -1,6 +1,7 @@
 package com.gankki.demo.test.maptest;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -22,6 +23,8 @@ public class MapTest {
         map.put(null,123);
         System.out.println(map.containsKey(null));
         System.out.println(map.get(null));
+
+        Hashtable<Integer, Integer> tmap = new Hashtable<>();
 
         ConcurrentHashMap<Integer,Integer> cmap = new ConcurrentHashMap<>();
         cmap.put(1, 1);
