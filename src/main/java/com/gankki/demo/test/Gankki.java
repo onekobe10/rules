@@ -73,6 +73,10 @@ public class Gankki {
         List<String> expList = Lists.newArrayList();
         expList.removeIf("3"::equals);
 
+        // throw early catch late
+        String fileName = null;
+        Objects. requireNonNull(fileName);
+
     }
 
 }
