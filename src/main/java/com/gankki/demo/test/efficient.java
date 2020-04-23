@@ -5,6 +5,7 @@ import com.gankki.demo.dto.ExponentFundDto;
 import com.gankki.demo.util.HttpUtil;
 import org.apache.commons.lang3.StringUtils;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -63,6 +64,12 @@ public class efficient {
         String response = HttpUtil.sendGet("http://e-api.jnlc.com/api/jf/getIndicatorInfo", paramMap, 3000, 5000);
         ExponentFundDto exponentFundDto = JSONObject.parseObject(response, ExponentFundDto.class);
 
+        // 6. BigDecimcal, doubleValue、toString在位数够多的情况下都会变成科学计数法，toPlainString则始终精确显示数值本身
+        System.out.println(new BigDecimal("0.000000000000001").doubleValue());
+        System.out.println(new BigDecimal("0.000000000000001").toString());
+        // 科学计数法标识
+        System.out.println(new BigDecimal("0.000000000000001").toEngineeringString());
+        System.out.println(new BigDecimal("0.000000000000001").toPlainString());
     }
 
 }

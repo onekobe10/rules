@@ -73,10 +73,18 @@ public class Gankki {
         List<String> expList = Lists.newArrayList();
         expList.removeIf("3"::equals);
 
-        // throw early catch late
+        // 11. throw early catch late
         String fileName = null;
         Objects. requireNonNull(fileName);
 
+        // 12. Optional 的使用场景，和 Stream 结合使用更合适
+        /*
+        public List<FundShare> calculationHqUserMakeValue(List<FundShare> allFundShareList) {
+            return Optional.ofNullable(allFundShareList)
+                    .orElseGet(Collections::emptyList)
+                    .stream().filter(fundShare -> Objects.equals("210012", fundShare.getFundcode())).collect(Collectors.toList());
+        }
+        */
     }
 
 }
