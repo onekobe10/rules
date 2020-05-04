@@ -68,6 +68,7 @@ public class Gankki {
         // 9. Stream mapReduce 函数的使用
         List<MapReduceDto> profitHistoryList = new ArrayList<>();
         BigDecimal totalNum = profitHistoryList.stream().map(MapReduceDto::getNum).reduce(BigDecimal.ZERO, BigDecimal::add);
+        //Map<String, Integer> map = list.stream().collect(Collectors.toMap(Entity::getKey, Entity::getValue));
 
         // 10. List中删除数据
         List<String> expList = Lists.newArrayList();
