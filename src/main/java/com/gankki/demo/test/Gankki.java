@@ -86,6 +86,40 @@ public class Gankki {
                     .stream().filter(fundShare -> Objects.equals("210012", fundShare.getFundcode())).collect(Collectors.toList());
         }
         */
+
+        // 13. Stream 分页， pageNum = 1
+        /*
+        fundGroupTradeEntityList = fundGroupTradeEntityList.stream().
+                skip((pageNum - 1) * pageSize).
+                limit(pageSize).collect(Collectors.toList());
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 }
