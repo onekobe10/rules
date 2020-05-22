@@ -10,12 +10,13 @@ import java.util.*;
 
 /**
  * knowledge point summary
+ *
  * @author liuhao
  * @date 2020/2/29
  */
 public class efficient {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /* 1.
          <<  表示左移，不分正负数，低位补0
          >>  表示右移，如果该数为正，则高位补0，若为负数，则高位补1
@@ -70,6 +71,22 @@ public class efficient {
         // 科学计数法标识
         System.out.println(new BigDecimal("0.000000000000001").toEngineeringString());
         System.out.println(new BigDecimal("0.000000000000001").toPlainString());
+
+        // 7. alibaba 代码规约
+        // 超过 120 个字符的情况下，换行缩进 4 个空格，并且方法前的点号一起换行
+        StringBuilder sb = new StringBuilder();
+        sb.append("zi").append("xin")
+                .append("huang")
+                .append("huang")
+                .append("huang");
+        // 参数很多的方法调用可能超过 120 个字符，逗号后才是换行处
+        /*
+        method(args1,
+               args2,
+               args3,
+               argsX);
+         */
+
     }
 
 }
