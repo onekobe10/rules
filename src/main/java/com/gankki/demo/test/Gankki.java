@@ -76,7 +76,7 @@ public class Gankki {
 
         // 11. throw early catch late
         String fileName = null;
-        Objects. requireNonNull(fileName);
+        //Objects. requireNonNull(fileName);
 
         // 12. Optional 的使用场景，和 Stream 结合使用更合适
         /*
@@ -94,8 +94,18 @@ public class Gankki {
                 limit(pageSize).collect(Collectors.toList());
          */
 
-
-
+        // 14 数组删除元素
+        // 正序删多个可能会导致IndexOutOfBoundsException
+        // 倒序删不需要管理size，没有下标越界问题
+        // Java 8 推荐使用 removeIf 方法删除
+        List<String> removeList = new ArrayList<>();
+        removeList.add("1");
+        removeList.add("2");
+        removeList.add("3");
+        removeList.add("11");
+        removeList.removeIf(s -> s.startsWith("1"));
+        // [2, 3]
+        System.out.println(removeList.toString());
 
 
 
