@@ -92,9 +92,9 @@ public class Gankki {
         fundGroupTradeEntityList = fundGroupTradeEntityList.stream().
                 skip((pageNum - 1) * pageSize).
                 limit(pageSize).collect(Collectors.toList());
-         */
+        */
 
-        // 14 数组删除元素
+        // 14. 数组删除元素
         // 正序删多个可能会导致IndexOutOfBoundsException
         // 倒序删不需要管理size，没有下标越界问题
         // Java 8 推荐使用 removeIf 方法删除
@@ -107,6 +107,35 @@ public class Gankki {
         // [2, 3]
         System.out.println(removeList.toString());
 
+        //  15. MyBatisPlus 分页使用和批量更新
+        /*
+        1. 配置分页连接器
+        @Configuration
+        public class MybatisPlusConfig {
+            @Bean
+            public PaginationInterceptor paginationInterceptor() {
+                return new PaginationInterceptor();
+            }
+        }
+        2. 使用 Page 分页类，调用 BaseMapper 的 selectPage 方法即可
+        int indexPage = 1;
+        LambdaQueryWrapper<TradeRecordEntity> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(TradeRecordEntity::getType, 10);
+        Page<TradeRecordEntity> page = new Page<>(indexPage, 100);
+        List<TradeRecordEntity>  tradeRecordEntityList = tradeRecordMapper.selectPage(page, queryWrapper).getRecords();
+
+        3. MyBatisPlus 的批量更新
+        LambdaQueryWrapper<TradeRecordEntity> queryWrapper2 = new LambdaQueryWrapper<>();
+        queryWrapper2.eq(TradeRecordEntity::getType, 10);
+        queryWrapper2.eq(TradeRecordEntity::getFundcode, fundCode);
+
+        TradeRecordEntity fundTypeEntity = new TradeRecordEntity();
+        fundTypeEntity.setFundType(Integer.valueOf(fundType));
+        // 只能 fundTypeEntity 中非空的属性，如果为空则不能更新
+        // 如果想把一个属性设置为 NULL，则不能使用这种批量更新方式
+        tradeRecordMapper.update(fundTypeEntity, queryWrapper2);
+
+        */
 
 
 
