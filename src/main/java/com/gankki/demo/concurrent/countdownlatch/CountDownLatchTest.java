@@ -3,6 +3,7 @@ package com.gankki.demo.concurrent.countdownlatch;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 线程同步工具类
@@ -14,9 +15,10 @@ public class CountDownLatchTest {
     public static Executor executor = Executors.newFixedThreadPool(2);
 
     /**
-     * CountDownLatch 实现线程等待：主线程需要等待多个子线程执行完毕之后再执行场景。
-     * CountDownLatch 主要用来解决一个线程等待多个线程的场景
-     * latch：/lætʃ/ 门闩
+     * 倒计时门栓 latch：/lætʃ/ 门闩
+     * 1. CountDownLatch 实现线程等待：主线程需要等待多个子线程执行完毕之后再执行场景。
+     * 2. CountDownLatch 主要用来解决一个线程等待多个线程的场景
+     * 3. CountDownLatch 的计数器是不能循环利用的，也就是说一旦计数器减到 0，再有线程调用 await()，该线程会直接通过
      * @param args
      */
     public static void main(String[] args) {
@@ -38,7 +40,8 @@ public class CountDownLatchTest {
                 });
 
                 // 等待两个查询操作结束
-                latch.await();
+                // 等待时建议设置超时时间
+                latch.await(3000, TimeUnit.MILLISECONDS);
 
                 /**
                  * 优化点：并行执行完查询操作之后，执行对账操作时，它们之间还是串行的。
