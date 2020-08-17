@@ -32,7 +32,6 @@ public class AlgorithmTest {
         arrJ[2] = 3;
 
         String s = "123";
-        s.char
     }
 
 }
