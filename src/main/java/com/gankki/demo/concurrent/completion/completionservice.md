@@ -13,7 +13,10 @@
 2. join 如果产生异常，会抛出运行时异常：CompletionException 
 
 #### 3. CompletionService：批量执行异步任务，能够让异步任务的执行结果按执行的速度有序化输出
+
+#### 4. ExecutorService 的提交方法
 1. Future submit(Runnable task, V result)：提交 Runnable 任务及结果引用 submit(Runnable task, T result)：这个方法很有意思，假设这个方法返回的 Future 对象是 f，f.get() 的返回值就是传给 submit() 方法的参数 result。这个方法该怎么用呢？下面这段示例代码展示了它的经典用法。需要你注意的是 Runnable 接口的实现类 Task 声明了一个有参构造函数 Task(Result r) ，创建 Task 对象的时候传入了 result 对象，这样就能在类 Task 的 run() 方法中对 result 进行各种操作了。result 相当于主线程和子线程之间的桥梁，通过它主子线程可以共享数据。
+2. 有了 Lambda 表达式对于线程池的支持，这个在主子线程之间传递对象的提交线程池的方式已经落后了。
 ```
 ExecutorService executor 
   = Executors.newFixedThreadPool(1);
