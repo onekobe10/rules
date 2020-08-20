@@ -1,5 +1,8 @@
 package com.gankki.demo.algorithm;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * 算法测试
  *
@@ -31,7 +34,11 @@ public class AlgorithmTest {
         arrJ[1] = 2;
         arrJ[2] = 3;
 
-        String s = "123";
+        // 3. 树的结构中不能有重复元素，如果有，新的元素会覆盖旧的元素
+        TreeMap<String, String> treeMap = new TreeMap<>();
+        treeMap.put("1", "2");
+        treeMap.put("1", "3");
+        System.out.println(treeMap.values().toString());
     }
 
 }
