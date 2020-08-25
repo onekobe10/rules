@@ -1,4 +1,4 @@
-package com.gankki.demo.algorithm.leetcode.climbstairs;
+package com.gankki.demo.algorithm.leetcode.climbstairs70;
 
 /**
  *

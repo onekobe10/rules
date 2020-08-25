@@ -77,7 +77,7 @@ public class TwoSumTest {
      */
     public int[] twoSum3(int[] nums, int target) {
         // O(n)
-        Map<Integer, Integer> tempMap = new HashMap<>(4);
+        Map<Integer, Integer> tempMap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             tempMap.put(nums[i], i);
         }
@@ -86,6 +86,22 @@ public class TwoSumTest {
             int temp = target - nums[i];
             if (tempMap.containsKey(temp) && tempMap.get(temp) != i) {
                 return new int[]{i, tempMap.get(temp)};
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 2020/8/25 16:06 O(n) O(n)
+     */
+    public int[] twoSum4(int[] nums, int target) {
+        Map<Integer, Integer> tempMap = new HashMap<>(nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            int temp = target - nums[i];
+            if (tempMap.containsKey(temp)) {
+                return new int[]{i, tempMap.get(temp)};
+            } else {
+                tempMap.put(nums[i], i);
             }
         }
         return null;
