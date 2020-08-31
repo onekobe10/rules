@@ -19,10 +19,10 @@ public class ClimbStairs {
     }
 
     /**
-     * 2020/8/16 15:46
+     * 2020/8/16 15:46 O(n) O(1) 从头到尾遍历实现
      */
-    public int climbStairs(int n) {
-        if (n < 2) {
+    public int climbStairs1(int n) {
+        if (n <= 2) {
             return n;
         }
         int temp = 0, a = 1, b = 2;
@@ -32,6 +32,30 @@ public class ClimbStairs {
             b = temp;
         }
         return temp;
+    }
+
+    /**
+     * 2020/8/30 16:54 O(2^n) O(1) 头递归，从高到低，没有增加缓存，不能复用
+     */
+    public int climbStairs2(int n) {
+        if (n <= 2) {
+            return n;
+        }
+        return climbStairs2(n - 1) + climbStairs2(n - 2);
+    }
+
+    /**
+     * 2020/8/30 17:18 O(n) O(1) 尾递归，从低到高，不用复用
+     */
+    public int climbStairs3(int n) {
+        return climbStairs3Inner(n ,1, 1);
+    }
+
+    public int climbStairs3Inner(int n, int a, int b) {
+        if (n <= 1) {
+            return b;
+        }
+        return climbStairs3Inner(--n, b, a + b);
     }
 
 }
