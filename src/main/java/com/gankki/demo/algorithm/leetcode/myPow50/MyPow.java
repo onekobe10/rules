@@ -29,15 +29,21 @@ public class MyPow {
     }
 
     static double quickMul2(double x, long n) {
-        System.out.println(x + "......." + n);
-        return 1;
+        double result = 1;
+        double var = x;
+        while (n > 0) {
+            if (n % 2 == 1) {
+                result *= var;
+            }
+            var *= var;
+            n /= 2;
+        }
+        return result;
     }
 
     public static double myPow2(double x, int n) {
         long N = n;
         return N >= 0 ? quickMul2(1, N) : 1.0 / quickMul2(2, -N);
     }
-
-
 
 }
