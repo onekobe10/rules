@@ -43,7 +43,7 @@
         <portlet-api.version>2.0</portlet-api.version>
         <jsp-api.version>2.2</jsp-api.version>
         <jstl.version>1.2</jstl.version>
-        <taglibs-standard-spec.version>1.2.1</taglibs-standard-spec.version>
+        <taglibs-standard-spec.version>1.2.5</taglibs-standard-spec.version>
         <httpcomponents.version>4.1.2</httpcomponents.version>
 
         <!-- commons -->
