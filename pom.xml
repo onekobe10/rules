@@ -86,7 +86,7 @@
         <!-- 验证码 -->
         <kaptcha.version>0.0.9</kaptcha.version>
         <!-- 测试 -->
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <testng.version>6.8.8</testng.version>
 
 
