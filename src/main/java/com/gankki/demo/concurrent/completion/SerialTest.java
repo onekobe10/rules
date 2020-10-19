@@ -46,12 +46,12 @@ public class SerialTest {
                             return "2";
                         }, Executors.newCachedThreadPool())
                         .thenApply(s -> {
-                            System.out.println("有入参有返回值");
+                            System.out.println("有入参有返回值......." + s);
                             System.out.println(Thread.currentThread().getName() + "............3");
                             return s + "_3";
                         })
                         .thenAccept(s -> {
-                            System.out.println("有入参没有返回值");
+                            System.out.println("有入参有返回值......." + s);
                             System.out.println(Thread.currentThread().getName() + "............4");
                         }).thenRun(() -> {
                             System.out.println("没有入参，没有返回值");
