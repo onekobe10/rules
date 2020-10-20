@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class SerialTest {
 
     /**
-     * 1. 串行执行的相关方法：
+     * 1. 串行执行的相关方法：(串行执行没必要使用 CompletableFuture)
      * CompletionStage<R> thenApply(fn);
      * CompletionStage<R> thenApplyAsync(fn);
      * CompletionStage<Void> thenAccept(consumer);
@@ -40,11 +40,11 @@ public class SerialTest {
     public static void main(String[] args) throws Exception {
         System.out.println(Thread.currentThread().getName() + "............1");
         CompletableFuture<String> f0 =
-                CompletableFuture.supplyAsync(
+                CompletableFuture.supplyAsync(// 异步流程，之后的每一步是串行执行的。
                         () -> {
                             System.out.println(Thread.currentThread().getName() + "............2");
                             return "2";
-                        }, Executors.newCachedThreadPool())
+                        }, Executors.newCachedThreadPool())// 指定线程池
                         .thenApply(s -> {
                             System.out.println("有入参有返回值......." + s);
                             System.out.println(Thread.currentThread().getName() + "............3");

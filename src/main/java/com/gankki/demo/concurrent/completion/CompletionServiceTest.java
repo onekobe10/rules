@@ -39,7 +39,7 @@ public class CompletionServiceTest {
         // 将询价结果异步保存到数据库
         for (int i = 0; i < 3; i++) {
             // 如果队列中为空，队列会阻塞，如果有线程执行完毕，队列会被唤醒处理。
-            Integer r = cs.take().get();
+            Integer r = cs.take().get();// 利用阻塞队列实现先获取到的报价先保存到数据库
             // 最后根据情况异步处理线程返回的批量结果
             executor.execute(() -> save(r));
         }
