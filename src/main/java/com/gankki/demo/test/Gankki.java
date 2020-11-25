@@ -137,6 +137,12 @@ public class Gankki {
 
         */
 
+        // 16. Map 的 put 方法的返回值
+        Map<String, String> mapPut = new HashMap<>();
+        map.put("1", "2");
+        // previous value, or null if none
+        System.out.println(map.put("1", "1"));
+
 
 
 
