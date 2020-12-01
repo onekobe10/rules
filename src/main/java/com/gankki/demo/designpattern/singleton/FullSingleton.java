@@ -1,7 +1,7 @@
 package com.gankki.demo.designpattern.singleton;
 
 /**
- *@desc	饱汉单例，类加载的时候完成实例化
+ *@des 饱汉单例，类加载的时候完成实例化
  *@author liuhao
  *@createDate 2019/5/16
  */

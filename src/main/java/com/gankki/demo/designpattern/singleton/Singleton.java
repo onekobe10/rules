@@ -11,7 +11,7 @@ public class Singleton {
 	private Singleton() {
 	}
 
-	public static Singleton getSingleton() {
+	public static Singleton getSingleton() {// 不要把 synchronized 加到方法上，影响性能。
 		// 尽量避免重复进入同步块
 		if (singleton == null) {
 			// 同步.class，意味着对同步类方法调用
