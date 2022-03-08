@@ -14,7 +14,7 @@
         <!-- pdf -->
         <itext.version>2.1.7</itext.version>
         <!-- xls -->
-        <org.apache.poi.version>3.7</org.apache.poi.version>
+        <org.apache.poi.version>5.2.1</org.apache.poi.version>
         <xmlbeans.version>2.6.0</xmlbeans.version>
         <!-- xml -->
         <xerces.version>2.4.0</xerces.version>
