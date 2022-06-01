@@ -12,7 +12,7 @@ Provide a surrogate or placeholder for another object to control access to it.
 3. 智能化
 
 #### 代理模式的扩展
-1. 普通代理 客户端只能访问代理角色，不能访问真实角色 通过约定不new 真实角色
+1. 普通代理 客户端只能访问代理角色，不能访问真实角色 通过约定不 new 真实角色
 2. 强制代理 必须通过真实角色查找到代理角色，否则不能访问
 3. 动态代理     
 >1. JDK动态代理  真实角色必须实现一个接口           
