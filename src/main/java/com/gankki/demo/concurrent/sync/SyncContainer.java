@@ -48,9 +48,9 @@ public class SyncContainer {
 			public void run() {
 				while (true) {
 					for (String str : list) {
-					}
-				}
+					}				}
 			}
+
 		});
 		iteratorThread.start();
 	}
