@@ -66,7 +66,7 @@
         <shiro.version>1.2.4</shiro.version>
 
         <!-- webservice -->
-        <cxf.version>2.7.6</cxf.version>
+        <cxf.version>2.7.9</cxf.version>
 
         <!-- hessian -->
         <hessian.version>4.0.38</hessian.version>
