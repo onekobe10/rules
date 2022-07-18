@@ -1,4 +1,4 @@
-package com.gankki.demo.algorithm.leetcode.movezeroes283;
+package com.gankki.demo.algorithm.classify.array;
 
 /**
  *

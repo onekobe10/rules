@@ -1,6 +1,10 @@
 package com.gankki.demo.algorithm.classify.linkedlist;
 
-public class hasCycle141 {
+/**
+ * 链表的中间结点
+ *
+ */
+public class middleNode876 {
 
     public class ListNode {
         int val;
@@ -19,16 +23,20 @@ public class hasCycle141 {
         }
     }
 
-    public boolean hasCycle(ListNode head) {
+    /**
+     * 快慢指针找链表的中点
+     *
+     * @param head
+     * @return
+     */
+    public ListNode middleNode(ListNode head) {
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) {
-                return true;
-            }
         }
-        return false;
+        return slow;
     }
+
 
 }

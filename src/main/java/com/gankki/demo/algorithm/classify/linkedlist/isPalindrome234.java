@@ -1,6 +1,6 @@
 package com.gankki.demo.algorithm.classify.linkedlist;
 
-public class hasCycle141 {
+public class isPalindrome234 {
 
     public class ListNode {
         int val;
@@ -19,16 +19,8 @@ public class hasCycle141 {
         }
     }
 
-    public boolean hasCycle(ListNode head) {
-        ListNode slow = head, fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast) {
-                return true;
-            }
-        }
-        return false;
+    public boolean isPalindrome(ListNode head) {
+
     }
 
 }
