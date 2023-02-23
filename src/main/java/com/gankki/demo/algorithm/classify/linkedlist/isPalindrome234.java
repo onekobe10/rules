@@ -20,7 +20,7 @@ public class isPalindrome234 {
     }
 
     public boolean isPalindrome(ListNode head) {
-
+        return false;
     }
 
 }
