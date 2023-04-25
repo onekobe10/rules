@@ -6,6 +6,8 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 /**
@@ -83,6 +85,11 @@ public class MapDupKeyTest {
 
         System.out.println(JSON.toJSONString(collect));
 
+        AtomicInteger ai = new AtomicInteger(0);
+        CompletableFuture.runAsync(() -> {
+                ai.addAndGet(2);
+        });
+        System.out.println(ai.get());
     }
 
     @Data
