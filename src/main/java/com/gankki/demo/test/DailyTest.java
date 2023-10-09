@@ -57,6 +57,11 @@ public class DailyTest {
         System.out.println(handleCalFeeRatePer(div4Str));
         */
 
+        Set<Integer> hashSet = new HashSet<>();
+        hashSet.add(3);
+        hashSet.add(1);
+        hashSet.add(2);
+        System.out.println(String.format("|", hashSet));
     }
 
     public static String div4Str(double v1, double v2) {// 除法
